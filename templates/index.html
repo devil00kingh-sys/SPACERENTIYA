@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpaceRentiya - Premium Real Estate</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    color:#252525;
+    background:#f5f4ee;
+  }
+  a{text-decoration:none;color:inherit}
+  .page{width:100%;overflow:hidden}
+
+  /* ============ PAGE 1 (Home / Hero) ============ */
+  .pg1 header{
+    height:84px;
+    background:#f7f7fa;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 58px;
+    position:relative;
+    z-index:10;
+    border-bottom:1px solid #ecebe4;
+  }
+  .pg1 .logo{
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:1px;
+    color:#07182d;
+  }
+  .pg1 nav{
+    display:flex;
+    align-items:center;
+    gap:38px;
+    font-size:14px;
+  }
+  .pg1 nav a{
+    position:relative;
+    color:#555;
+    font-weight:600;
+    letter-spacing:.3px;
+    padding:8px 2px;
+    transition:color .25s ease;
+  }
+  .pg1 nav a:hover{color:#b8965c}
+  .pg1 nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:2px;
+    background:#b8965c;
+    transition:width .25s ease;
+  }
+  .pg1 nav a:hover::after,
+  .pg1 nav a:first-child::after{width:100%}
+  .pg1 nav a:first-child{color:#222}
+  .pg1 .header-right{display:flex;align-items:center;gap:26px}
+  .pg1 .login{font-size:13px;color:#555;font-weight:600}
+  .pg1 .book-btn{
+    background:#07182d;color:white;
+    border-radius:6px;
+    padding:14px 26px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.3px;
+    transition:background .25s ease;
+  }
+  .pg1 .book-btn:hover{background:#b8965c}
+  .pg1 .hero{
+    min-height:535px;
+    position:relative;
+    background-image:
+      linear-gradient(rgba(8,22,31,.62),rgba(8,22,31,.72)),
+      url("../images/ChatGPT Image Sep 22, 2026, 09_34_50 AM.png");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:70px 58px;
+    color:#fff;
+  }
+  .pg1 .hero-content{max-width:650px;margin-top:30px}
+  .pg1 .eyebrow{
+    display:inline-block;
+    background:#0b355b;
+    color:#c8d7e3;
+    padding:6px 11px;
+    font-size:9px;
+    letter-spacing:1.3px;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+  .pg1 h1{
+    font-size:37px;
+    line-height:1.12;
+    letter-spacing:-1px;
+    margin-bottom:20px;
+  }
+  .pg1 .hero p{
+    max-width:490px;
+    font-size:14px;
+    line-height:1.65;
+    color:#e3e7e9;
+    margin-bottom:28px;
+  }
+  .pg1 .hero-actions{display:flex;gap:14px}
+  .pg1 .btn{
+    padding:14px 25px;
+    font-size:11px;
+    font-weight:700;
+    border-radius:3px;
+  }
+  .pg1 .btn-light{background:#fff;color:#333}
+  .pg1 .btn-outline{border:1px solid #fff;color:#fff}
+  .pg1 .about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:330px;
+    background:#f7f6f0;
+  }
+  .pg1 .about-copy{padding:52px 58px 42px}
+  .pg1 .small-title{
+    color:#a08b61;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1.4px;
+    margin-bottom:10px;
+  }
+  .pg1 .serif{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:400;
+  }
+  .pg1 .about h2{
+    font-size:26px;
+    line-height:1.05;
+    margin-bottom:22px;
+  }
+  .pg1 .about p{
+    font-size:11px;
+    line-height:1.65;
+    color:#4e4e4a;
+    max-width:430px;
+    margin-bottom:13px;
+  }
+  .pg1 .about-image{
+    padding:8px 42px 8px 0;
+    display:flex;
+    align-items:center;
+  }
+  .pg1 .about-image img{
+    width:100%;
+    height:285px;
+    object-fit:cover;
+    display:block;
+  }
+  .pg1 .philosophy{
+    min-height:180px;
+    background:#f7f6f0;
+    border-top:1px solid #e6e4dc;
+    border-bottom:1px solid #e6e4dc;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 20px;
+  }
+  .pg1 .philosophy h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:25px;
+    line-height:1.05;
+    margin-bottom:18px;
+  }
+  .pg1 .philosophy p{
+    max-width:500px;
+    font-size:10px;
+    line-height:1.7;
+    color:#555;
+    margin-bottom:5px;
+  }
+  .pg1 .categories{
+    background:#f2f1eb;
+    padding:18px 58px 42px;
+  }
+  .pg1 .categories-head{
+    text-align:center;
+    margin-bottom:20px;
+  }
+  .pg1 .categories h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:23px;
+    font-weight:400;
+  }
+  .pg1 .cards{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:9px;
+  }
+  .pg1 .card{min-width:0}
+  .pg1 .card-img{
+    width:100%;
+    height:115px;
+    object-fit:cover;
+    display:block;
+  }
+  .pg1 .card-body{padding-top:11px}
+  .pg1 .icon{
+    color:#aa8f55;
+    font-size:16px;
+    margin-bottom:7px;
+  }
+  .pg1 .card h3{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:12px;
+    margin-bottom:7px;
+  }
+  .pg1 .card p{
+    font-size:9px;
+    line-height:1.45;
+    color:#666;
+    min-height:27px;
+  }
+  .pg1 .explore{
+    display:inline-block;
+    color:#9c7d42;
+    font-size:9px;
+    margin-top:9px;
+  }
+
+  /* ============ PAGE 2 (Global / Why / Featured / Vision) ============ */
+  .pg2 img{display:block;max-width:100%}
+  .pg2 .global{
+    min-height:382px;
+    background:#020d21;
+    color:#fff;
+    display:grid;
+    grid-template-columns:52% 48%;
+  }
+  .pg2 .global-copy{
+    padding:50px 42px 35px 45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .pg2 .global-copy h1{
+    max-width:390px;
+    font-size:21px;
+    line-height:1.25;
+    margin-bottom:19px;
+    font-weight:700;
+  }
+  .pg2 .global-copy>p{
+    max-width:430px;
+    color:#c5ccd7;
+    font-size:11px;
+    line-height:1.55;
+    margin-bottom:25px;
+  }
+  .pg2 .location-list{width:100%;max-width:430px}
+  .pg2 .location{
+    min-height:43px;
+    margin-bottom:11px;
+    background:#0c2341;
+    border-left:3px solid #e8e4d8;
+    display:flex;
+    align-items:center;
+    padding:7px 12px;
+    gap:12px;
+  }
+  .pg2 .flag{
+    width:30px;height:20px;
+    object-fit:cover;
+    background:#26364b;
+    flex:none;
+  }
+  .pg2 .location strong{display:block;font-size:12px;margin-bottom:3px}
+  .pg2 .location small{display:block;color:#aab4c2;font-size:7px;letter-spacing:.1px}
+  .pg2 .global-image{
+    padding:0 38px 0 0;
+    display:flex;
+    align-items:center;
+  }
+  .pg2 .global-image .image-placeholder{
+    width:100%;
+    height:100%;
+    min-height:380px;
+    background:
+      linear-gradient(rgba(0,10,25,.35),rgba(0,10,25,.35)),
+      url("../images/ChatGPT Image Sep 22, 2026, 09_38_25 AM.png") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .pg2 .map-label{
+    color:#d5dbe4;
+    font-size:10px;
+    letter-spacing:1px;
+    font-weight:700;
+  }
+  .pg2 .why{
+    background:#f7f6ef;
+    padding:23px 42px 16px;
+  }
+  .pg2 .eyebrow{
+    color:#a9905d;
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:1.1px;
+    text-align:center;
+    margin-bottom:7px;
+  }
+  .pg2 .why h2{
+    text-align:center;
+    font:400 24px/1.1 Georgia,"Times New Roman",serif;
+    margin-bottom:20px;
+  }
+  .pg2 .features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid #dedbd2;
+    border-bottom:1px solid #dedbd2;
+  }
+  .pg2 .feature{
+    min-height:91px;
+    padding:13px 17px;
+    border-right:1px solid #dedbd2;
+  }
+  .pg2 .feature:last-child{border-right:0}
+  .pg2 .feature-icon{
+    font-size:22px;
+    color:#b49662;
+    height:27px;
+    line-height:24px;
+  }
+  .pg2 .feature h3{
+    font:700 9px/1.2 Georgia,"Times New Roman",serif;
+    margin-bottom:6px;
+    letter-spacing:.2px;
+  }
+  .pg2 .feature p{
+    color:#65635e;
+    font-size:7px;
+    line-height:1.45;
+    max-width:150px;
+  }
+  .pg2 .featured{
+    min-height:113px;
+    background:#f7f6ef;
+    display:grid;
+    grid-template-columns:56% 44%;
+  }
+  .pg2 .featured-image{
+    background:url("../images/Screenshot 2026-09-22 093810.png") center/cover no-repeat;
+    min-height:113px;
+  }
+  .pg2 .featured-copy{
+    padding:18px 28px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .pg2 .featured-copy .eyebrow{text-align:left;margin-bottom:6px}
+  .pg2 .featured-copy h2{
+    font:400 19px/1.05 Georgia,"Times New Roman",serif;
+    margin-bottom:6px;
+  }
+  .pg2 .featured-copy p{
+    color:#64615b;
+    font-size:8px;
+    line-height:1.4;
+    max-width:270px;
+  }
+  .pg2 .gold-btn{
+    display:inline-block;
+    width:max-content;
+    margin-top:9px;
+    padding:7px 15px;
+    background:#bd9b55;
+    color:#fff;
+    font-size:7px;
+    font-weight:700;
+  }
+  .pg2 .markets{
+    min-height:154px;
+    margin-top:30px;
+    background:
+      linear-gradient(rgba(8,8,8,.4),rgba(8,8,8,.4)),
+      url("../images/ChatGPT Image Sep 22, 2026, 09_41_00 AM.png") center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    padding:13px 20px 20px;
+  }
+  .pg2 .markets .eyebrow{margin-bottom:4px}
+  .pg2 .markets h2{
+    font:400 20px/1.05 Georgia,"Times New Roman",serif;
+    margin-bottom:11px;
+  }
+  .pg2 .market-map{
+    height:69px;
+    max-width:570px;
+    margin:auto;
+    background:url("../images/markets-map.jpg") center/cover no-repeat;
+    opacity:.75;
+  }
+  .pg2 .market-names{
+    display:flex;
+    justify-content:space-around;
+    max-width:530px;
+    margin:-3px auto 0;
+    color:#b79a5f;
+    font-size:8px;
+    font-weight:700;
+  }
+  .pg2 .markets p{
+    font-size:8px;
+    color:#d3d3d3;
+    margin-top:7px;
+  }
+  .pg2 .approach{
+    background:#f7f6ef;
+    padding:12px 42px 19px;
+  }
+  .pg2 .approach .eyebrow{margin-bottom:10px}
+  .pg2 .steps{
+    max-width:650px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+  }
+  .pg2 .step{
+    text-align:center;
+    position:relative;
+  }
+  .pg2 .step:not(:last-child):after{
+    content:"";
+    position:absolute;
+    width:55%;
+    height:1px;
+    background:#cdbb99;
+    top:18px;
+    left:73%;
+  }
+  .pg2 .step-number{
+    font:400 19px Georgia,"Times New Roman",serif;
+    color:#b18f56;
+    margin-bottom:7px;
+  }
+  .pg2 .step-icon{font-size:15px;color:#a98d59;margin-bottom:5px}
+  .pg2 .step h3{
+    font-size:7px;
+    margin-bottom:5px;
+    font-weight:700;
+  }
+  .pg2 .step p{
+    font-size:6px;
+    color:#68645d;
+    line-height:1.35;
+    max-width:100px;
+    margin:auto;
+  }
+  .pg2 .vision{
+    min-height:150px;
+    background:
+      linear-gradient(90deg,rgba(8,13,15,.77),rgba(8,13,15,.25)),
+      url("../images/ChatGPT Image Sep 22, 2026, 09_42_59 AM.png") center/cover no-repeat;
+    color:#fff;
+    padding:27px 45px;
+    display:flex;
+    align-items:center;
+  }
+  .pg2 .vision-content{max-width:420px}
+  .pg2 .vision .eyebrow{text-align:left;color:#bd9e61}
+  .pg2 .vision h2{
+    font:400 22px/1.08 Georgia,"Times New Roman",serif;
+    margin-bottom:10px;
+  }
+  .pg2 .vision p{
+    font-size:8px;
+    line-height:1.5;
+    color:#e1e3e1;
+    max-width:410px;
+  }
+
+  /* ============ PAGE 3 (Services / CTA / Footer) ============ */
+  .pg3{background:#fff}
+  .pg3 .page{max-width:1200px;margin:auto}
+  .pg3 .hero{
+    height:245px;color:white;position:relative;
+    background:linear-gradient(90deg,rgba(5,10,12,.82),rgba(5,10,12,.25)),
+    url("../images/ChatGPT Image Sep 22, 2026, 09_41_53 AM.png") center/cover no-repeat;
+    display:flex;align-items:center;padding:0 48px;
+  }
+  .pg3 .hero-content{max-width:455px}
+  .pg3 .eyebrow{font-size:7px;letter-spacing:1px;color:#b89961;font-weight:bold;margin-bottom:7px}
+  .pg3 .hero h1{font:400 25px/1.08 Georgia,"Times New Roman",serif;margin-bottom:11px}
+  .pg3 .hero p{font-size:8px;line-height:1.5;color:#ddd;max-width:380px;margin-bottom:12px}
+  .pg3 .hero-locations{display:flex;gap:17px;font-size:7px;letter-spacing:1.2px}
+  .pg3 .hero-locations span:before{content:"•";color:#c29b56;margin-right:6px}
+  .pg3 .services{background:#f8f7f1;padding:19px 48px 15px}
+  .pg3 .center{text-align:center}
+  .pg3 .services h2{font:400 19px Georgia,serif;margin-bottom:5px}
+  .pg3 .sub{font-size:7px;line-height:1.45;color:#666;max-width:520px;margin:0 auto 13px}
+  .pg3 .service-grid{display:flex;flex-direction:column;gap:5px}
+  .pg3 .service{
+    display:grid;grid-template-columns:43% 57%;min-height:116px;
+    background:#f8f7f1;
+  }
+  .pg3 .service:nth-child(even){grid-template-columns:57% 43%}
+  .pg3 .service:nth-child(even) .service-image{order:2}
+  .pg3 .service:nth-child(even) .service-content{order:1}
+  .pg3 .service-image{
+    background-position:center;background-size:cover;min-height:116px;
+  }
+  .pg3 .img1{background-image:url("../images/Screenshot 2026-09-22 093810.png")}
+  .pg3 .img2{background-image:url("../images/Screenshot 2026-09-22 093645.png")}
+  .pg3 .img3{background-image:url("../images/Screenshot 2026-09-22 093957.png")}
+  .pg3 .img4{background-image:url("../images/Screenshot 2026-09-22 093658.png")}
+  .pg3 .img5{background-image:url("../images/ChatGPT Image Sep 22, 2026, 09_36_11 AM.png")}
+  .pg3 .img6{background-image:url("../images/ChatGPT Image Sep 22, 2026, 09_41_53 AM.png")}
+  .pg3 .service-content{padding:11px 22px;display:flex;flex-direction:column;justify-content:center}
+  .pg3 .service-number{font:400 20px Georgia,serif;color:#a98a52;line-height:1;margin-bottom:2px}
+  .pg3 .service h3{font:400 14px Georgia,serif;margin-bottom:5px}
+  .pg3 .service p{font-size:7px;line-height:1.45;color:#555;max-width:280px;margin-bottom:6px}
+  .pg3 .service-points{display:grid;grid-template-columns:1fr 1fr;gap:3px 13px;max-width:300px}
+  .pg3 .service-points span{font-size:6px;color:#666}
+  .pg3 .service-points span:before{content:"♢";color:#b39158;margin-right:5px}
+  .pg3 .explore{
+    margin-top:7px;background:#b89553;color:white;padding:5px 10px;
+    font-size:6px;width:max-content;
+  }
+  .pg3 .markets{
+    color:white;text-align:center;
+    background:linear-gradient(rgba(8,12,13,.82),rgba(8,12,13,.82)),
+    url("../images/ChatGPT Image Sep 22, 2026, 09_41_00 AM.png") center/cover no-repeat;
+  }
+  .pg3 .markets .eyebrow{margin-bottom:6px}
+  .pg3 .markets h2{font:400 21px/1.15 Georgia,serif;margin-bottom:12px}
+  .pg3 .map{
+    height:80px;max-width:640px;margin:0 auto;
+    background:url("../images/world-map.jpg") center/cover no-repeat;opacity:.68;
+  }
+  .pg3 .market-labels{
+    display:flex;justify-content:space-around;max-width:640px;
+    margin:10px auto 0;color:#c29c5c;font-size:12px;letter-spacing:1px;
+  }
+  .pg3 .markets p{font-size:11px;color:#ddd;margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto}
+  .pg3 .approach{
+    background:#faf9f4;padding:12px 50px 15px;text-align:center;
+  }
+  .pg3 .approach h2{font:400 17px Georgia,serif;margin-bottom:12px}
+  .pg3 .steps{display:grid;grid-template-columns:repeat(4,1fr);max-width:700px;margin:auto}
+  .pg3 .step{position:relative}
+  .pg3 .step:not(:last-child):after{
+    content:"";position:absolute;top:12px;right:-4px;width:35%;
+    border-top:1px solid #cbb890;
+  }
+  .pg3 .step-top{display:flex;justify-content:center;align-items:center;gap:8px}
+  .pg3 .num{font:400 15px Georgia,serif;color:#ae8c55}
+  .pg3 .icon{
+    width:25px;height:25px;border:1px solid #d1bd99;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:#ae8c55;font-size:10px;
+  }
+  .pg3 .step h3{font-size:6px;margin-top:5px}
+  .pg3 .step p{font-size:5.5px;line-height:1.4;color:#777;max-width:105px;margin:4px auto}
+  .pg3 .cta{
+    height:98px;color:#fff;display:flex;align-items:center;padding:0 48px;
+    background:linear-gradient(90deg,rgba(4,8,10,.85),rgba(4,8,10,.25)),
+    url("../images/ChatGPT Image Sep 22, 2026, 09_43_42 AM.png") center/cover no-repeat;
+  }
+  .pg3 .cta h2{font:400 16px Georgia,serif;margin-bottom:4px}
+  .pg3 .cta p{font-size:6px;color:#ddd;margin-bottom:7px}
+  .pg3 .cta-buttons{display:flex;gap:7px}
+  .pg3 .cta a{font-size:6px;padding:5px 9px;border:1px solid #c09a59}
+  .pg3 .cta a:first-child{background:#bd9855;border-color:#bd9855}
+  .pg3 footer{
+    height:38px;background:#0b1012;color:#bbb;display:flex;align-items:center;
+    justify-content:space-between;padding:0 48px;font-size:6px;
+  }
+  .pg3 .footer-logo{font-family:Georgia,serif;color:white;font-size:8px;letter-spacing:1px}
+  .pg3 .footer-links{display:flex;gap:24px}
+
+  /* ============ GLOBAL REFINEMENT: spacing & readability ============ */
+  :root{--gutter:clamp(22px,5vw,80px)}
+  .page{overflow:visible}
+
+  /* PAGE 1 — spacing and typography */
+  .pg1 header{padding-left:var(--gutter);padding-right:var(--gutter)}
+  .pg1 .hero{padding:80px var(--gutter)}
+  .pg1 .about-copy{padding:60px var(--gutter) 46px}
+  .pg1 .about-image{padding:8px calc(var(--gutter) - 14px) 8px 0}
+  .pg1 .about p{font-size:13px;line-height:1.7;max-width:460px}
+  .pg1 .about-image img{height:300px}
+  .pg1 .philosophy p{font-size:13px}
+  .pg1 .categories{padding:46px var(--gutter) 60px}
+  .pg1 .categories-head{margin-bottom:28px}
+  .pg1 .card p{font-size:11px}
+  .pg1 .card h3{font-size:14px}
+  .pg1 .explore{font-size:11px}
+
+  /* PAGE 2 — spacing and typography */
+  .pg2 .global-copy{padding:60px var(--gutter) 45px}
+  .pg2 .global-image{padding:0 var(--gutter) 0 0}
+  .pg2 .global-copy h1{font-size:28px}
+  .pg2 .global-copy>p{font-size:15px;line-height:1.7}
+  .pg2 .location strong{font-size:14px}
+  .pg2 .location small{font-size:11px}
+  .pg2 .map-label{font-size:12px}
+  .pg2 .why{padding:48px var(--gutter) 42px}
+  .pg2 .eyebrow{font-size:10px}
+  .pg2 .feature p{font-size:12px;line-height:1.6;max-width:230px}
+  .pg2 .feature h3{font-size:12px}
+  .pg2 .featured-copy{padding:24px 30px}
+  .pg2 .featured-copy h2{font-size:22px}
+  .pg2 .featured-copy p{font-size:12px;line-height:1.6;max-width:320px}
+  .pg2 .gold-btn{font-size:11px;padding:10px 18px}
+  .pg2 .markets{min-height:190px;padding:30px var(--gutter)}
+  .pg2 .market-names{font-size:12px;margin:6px auto 0}
+  .pg2 .markets p{font-size:11px;margin-top:10px}
+  .pg2 .approach{padding:45px var(--gutter) 50px}
+  .pg2 .steps{max-width:760px}
+  .pg2 .step p{font-size:10px;line-height:1.5;max-width:150px}
+  .pg2 .step h3{font-size:11px}
+  .pg2 .step-number{font-size:22px}
+  .pg2 .vision{padding:42px var(--gutter)}
+  .pg2 .vision h2{font-size:24px}
+  .pg2 .vision p{font-size:13px;line-height:1.7}
+
+  /* PAGE 3 — spacing and typography */
+  .pg3 .hero{padding:0 var(--gutter)}
+  .pg3 .eyebrow{font-size:10px}
+  .pg3 .hero h1{font-size:30px}
+  .pg3 .hero p{font-size:14px;line-height:1.7}
+  .pg3 .hero-locations{font-size:12px}
+  .pg3 .services{padding:44px var(--gutter) 46px}
+  .pg3 .sub{font-size:13px;line-height:1.7;max-width:620px}
+  .pg3 .service-content{padding:22px 26px}
+  .pg3 .service h3{font-size:17px}
+  .pg3 .service p{font-size:13px;line-height:1.6;max-width:340px}
+  .pg3 .service-points span{font-size:11px}
+  .pg3 .service-number{font-size:24px}
+  .pg3 .explore{font-size:11px;padding:7px 13px}
+  .pg3 .markets{min-height:170px;height:auto;padding:28px var(--gutter)}
+  .pg3 .market-labels{font-size:12px;margin:10px auto 0}
+  .pg3 .markets p{font-size:11px;margin-top:12px}
+  .pg3 .approach{padding:40px var(--gutter) 46px}
+  .pg3 .steps{max-width:820px}
+  .pg3 .num{font-size:18px}
+  .pg3 .icon{width:30px;height:30px;font-size:13px}
+  .pg3 .step p{font-size:10px;line-height:1.5;max-width:140px}
+  .pg3 .step h3{font-size:11px}
+  .pg3 .cta{padding:0 var(--gutter)}
+  .pg3 .cta h2{font-size:20px}
+  .pg3 .cta p{font-size:12px;margin-bottom:10px}
+  .pg3 .cta a{font-size:11px;padding:8px 14px}
+  .pg3 footer{height:auto;font-size:11px;padding:14px var(--gutter)}
+  .pg3 .footer-logo{font-size:13px}
+
+  /* ============ RESPONSIVE: PAGE 1 ============ */
+  @media(max-width:900px){
+    .pg1 header{padding:0 25px}
+    .pg1 nav{gap:15px}
+    .pg1 .about{grid-template-columns:1fr}
+    .pg1 .about-image{padding:0 25px 25px}
+    .pg1 .cards{grid-template-columns:repeat(3,1fr)}
+    .pg1 .hero{padding:55px 30px}
+  }
+  @media(max-width:600px){
+    .pg1 header{height:auto;padding:18px 20px;flex-wrap:wrap;gap:16px}
+    .pg1 nav{order:3;width:100%;justify-content:center;overflow:auto}
+    .pg1 .header-right{margin-left:auto}
+    .pg1 .login{display:none}
+    .pg1 .hero{min-height:500px;padding:40px 25px}
+    .pg1 h1{font-size:31px}
+    .pg1 .about-copy{padding:40px 25px 25px}
+    .pg1 .cards{grid-template-columns:1fr 1fr}
+    .pg1 .categories{padding-left:25px;padding-right:25px}
+  }
+
+  /* ============ RESPONSIVE: PAGE 2 ============ */
+  @media(max-width:800px){
+    .pg2 .global{grid-template-columns:1fr}
+    .pg2 .global-image{padding:0 25px 25px}
+    .pg2 .global-image .image-placeholder{min-height:250px}
+    .pg2 .features{grid-template-columns:repeat(2,1fr)}
+    .pg2 .feature:nth-child(2){border-right:0}
+    .pg2 .feature:nth-child(-n+2){border-bottom:1px solid #dedbd2}
+    .pg2 .featured{grid-template-columns:1fr}
+    .pg2 .featured-image{min-height:210px}
+  }
+  @media(max-width:520px){
+    .pg2 .global-copy{padding:35px 24px}
+    .pg2 .why{padding:22px 20px}
+    .pg2 .features{grid-template-columns:1fr}
+    .pg2 .feature{border-right:0!important;border-bottom:1px solid #dedbd2}
+    .pg2 .feature:last-child{border-bottom:0}
+    .pg2 .featured-copy{padding:25px}
+    .pg2 .approach{padding-left:15px;padding-right:15px}
+    .pg2 .steps{grid-template-columns:repeat(2,1fr);gap:22px 0}
+    .pg2 .step:not(:last-child):after{display:none}
+    .pg2 .vision{padding:30px 25px}
+  }
+
+  /* ============ RESPONSIVE: PAGE 3 ============ */
+  @media(max-width:750px){
+    .pg3 .hero{padding:0 25px}
+    .pg3 .services{padding-left:25px;padding-right:25px}
+    .pg3 .service,.pg3 .service:nth-child(even){grid-template-columns:1fr}
+    .pg3 .service:nth-child(even) .service-image{order:1}
+    .pg3 .service:nth-child(even) .service-content{order:2}
+    .pg3 .service-image{height:160px}
+    .pg3 .service-content{padding:15px}
+    .pg3 .steps{grid-template-columns:repeat(2,1fr);gap:15px}
+    .pg3 .step:not(:last-child):after{display:none}
+    .pg3 .cta{padding:0 25px}
+    .pg3 footer{padding:0 20px}
+  }
+  @media(max-width:500px){
+    .pg3 .hero{height:290px}
+    .pg3 .hero h1{font-size:24px}
+    .pg3 .hero-locations{gap:8px}
+    .pg3 .services{padding:18px 15px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<div class="page pg1">
+  <header>
+    <div class="logo">SPACERENTIYA</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="about/">About</a>
+      <a href="contact/">Contact</a>
+    </nav>
+    <div class="header-right">
+      <a class="login" href="#">Investor Login</a>
+      <a class="book-btn" href="#">Book Meeting</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">GLOBAL REAL ESTATE NETWORK</div>
+      <h1>Premium Real Estate Solutions<br>Across India, Dubai &amp; Singapore</h1>
+      <p>
+        Helping enterprises, investors, developers, and businesses
+        discover world-class real estate opportunities with absolute transparency.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="#">Explore Properties</a>
+        <a class="btn btn-outline" href="#">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about-copy">
+      <div class="small-title">WHO WE ARE</div>
+      <h2 class="serif">A Different Perspective<br>on Real Estate.</h2>
+      <p>
+        SpaceRentiya is a premium real-estate company focused on connecting
+        people, businesses and investors with the right property opportunities.
+      </p>
+      <p>
+        We work across multiple real-estate segments — from luxury coworking
+        and villas to industrial land, warehouses, hotels, resorts and commercial properties.
+      </p>
+      <p>
+        Our approach is simple: understand the requirement, identify the right
+        opportunity and create the right connection.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="../images/ChatGPT Image Sep 22, 2026, 09_36_11 AM.png" alt="Commercial real estate">
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <div class="small-title">OUR PHILOSOPHY</div>
+    <h2>The Right Space Can Create<br>The Right Opportunity.</h2>
+    <p>We believe real estate is more than property. It is about location,</p>
+    <p>purpose, potential and the people behind every opportunity.</p>
+    <p>Our focus is to make the search for the right space more</p>
+    <p>curated, transparent and meaningful.</p>
+  </section>
+
+  <section class="categories" id="services">
+    <div class="categories-head">
+      <div class="small-title">WHAT WE DO</div>
+      <h2>Across Real Estate. Across Possibilities.</h2>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <img class="card-img" src="../images/Screenshot 2026-09-22 093639.png" alt="Luxury coworking">
+        <div class="card-body">
+          <div class="icon">◇</div>
+          <h3>Luxury Coworking</h3>
+          <p>Premium workspaces for modern businesses.</p>
+          <a class="explore" href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" src="../images/Screenshot 2026-09-22 093645.png" alt="Industrial land">
+        <div class="card-body">
+          <div class="icon">◇</div>
+          <h3>Industrial Land</h3>
+          <p>Strategic land opportunities for industrial and commercial development.</p>
+          <a class="explore" href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" src="../images/Screenshot 2026-09-22 093652.png" alt="Warehouse">
+        <div class="card-body">
+          <div class="icon">◇</div>
+          <h3>Warehouses</h3>
+          <p>Modern logistics, storage and industrial assets.</p>
+          <a class="explore" href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" src="../images/Screenshot 2026-09-22 093658.png" alt="Luxury villas">
+        <div class="card-body">
+          <div class="icon">◇</div>
+          <h3>Luxury Villas</h3>
+          <p>Premium residences in exceptional locations.</p>
+          <a class="explore" href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" src="../images/Screenshot 2026-09-22 093704.png" alt="Hotels and resorts">
+        <div class="card-body">
+          <div class="icon">◇</div>
+          <h3>Hotels &amp; Resorts</h3>
+          <p>Hospitality properties and investment opportunities.</p>
+          <a class="explore" href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" src="../images/Screenshot 2026-09-22 093712.png" alt="Commercial real estate">
+        <div class="card-body">
+          <div class="icon">◇</div>
+          <h3>Commercial Real Estate</h3>
+          <p>Selected commercial and investment properties.</p>
+          <a class="explore" href="#">Explore →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE 2 ============ -->
+<div class="page pg2">
+  <section class="global">
+    <div class="global-copy">
+      <h1>A Trusted Presence Across Global Frontiers</h1>
+      <p>Our deep local knowledge combined with international standards allows us to facilitate seamless cross-border investments and property management.</p>
+
+      <div class="location-list">
+        <div class="location">
+          <img class="flag" src="../images/india-flag.jpg" alt="India flag">
+          <div><strong>India</strong><small>HQ: Jaipur | Presence in Mumbai, Bangalore, Delhi</small></div>
+        </div>
+        <div class="location">
+          <img class="flag" src="../images/dubai-flag.jpg" alt="Dubai flag">
+          <div><strong>Dubai</strong><small>Regional Hub: Business Bay | JLT | Palm Jumeirah</small></div>
+        </div>
+        <div class="location">
+          <img class="flag" src="../images/singapore-flag.jpg" alt="Singapore flag">
+          <div><strong>Singapore</strong><small>Asia-Pacific Center: CBD | Marina Bay Sands District</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="global-image">
+      <div class="image-placeholder">
+        <span class="map-label">GLOBAL CONNECTIVITY HUB</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="eyebrow">WHY SPACERENTIYA</div>
+    <h2>Built Around Better Opportunities.</h2>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">♢</div>
+        <h3>01 — CURATED ASSETS</h3>
+        <p>Selected properties and opportunities rather than overwhelming clients with listings.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">♧</div>
+        <h3>02 — STRATEGIC LOCATIONS</h3>
+        <p>Location, accessibility and long-term potential remain central to every opportunity.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">♢</div>
+        <h3>03 — DISCREET ADVISORY</h3>
+        <p>Professional and confidential assistance throughout the property journey.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">◎</div>
+        <h3>04 — GLOBAL PERSPECTIVE</h3>
+        <p>Connecting opportunities across India, Dubai and Singapore.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="featured-image"></div>
+    <div class="featured-copy">
+      <div class="eyebrow">FEATURED OPPORTUNITY</div>
+      <h2>Premium Spaces.<br>Exceptional Potential.</h2>
+      <p>Explore selected real-estate opportunities curated for living, business and investment.</p>
+      <a class="gold-btn" href="#">View Opportunity</a>
+    </div>
+  </section>
+
+  <section class="markets">
+    <div class="eyebrow">OUR MARKETS</div>
+    <h2>Three Markets. One Network.</h2>
+    <div class="market-map"></div>
+    <div class="market-names">
+      <span>INDIA</span>
+      <span>DUBAI / UAE</span>
+      <span>SINGAPORE</span>
+    </div>
+    <p>Connecting real-estate opportunities across strategically important markets.</p>
+  </section>
+
+  <section class="approach">
+    <div class="eyebrow">OUR APPROACH</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-icon">♧</div>
+        <h3>UNDERSTAND</h3>
+        <p>Understand the client's requirements and objectives.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-icon">⌕</div>
+        <h3>CURATE</h3>
+        <p>Identify relevant property opportunities.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-icon">▣</div>
+        <h3>CONNECT</h3>
+        <p>Connect clients with the right opportunity.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">04</div>
+        <div class="step-icon">✓</div>
+        <h3>MOVE FORWARD</h3>
+        <p>Support the next stage of the real-estate journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vision">
+    <div class="vision-content">
+      <div class="eyebrow">OUR VISION</div>
+      <h2>Building a More Connected<br>Real-Estate Network.</h2>
+      <p>Our vision is to build a trusted real-estate network connecting premium properties, businesses, investors and opportunities across India, Dubai and Singapore.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE 3 ============ -->
+<div class="page pg3">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">OUR SERVICES</div>
+      <h1>Real Estate Opportunities,<br>Curated Around Your Vision.</h1>
+      <p>From premium workspaces and luxury residences to industrial assets, warehouses and hospitality properties, SpaceRentiya connects clients with carefully selected real-estate opportunities across India, Dubai and Singapore.</p>
+      <div class="hero-locations"><span>INDIA</span><span>DUBAI</span><span>SINGAPORE</span></div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="center">
+      <div class="eyebrow">WHAT WE DO</div>
+      <h2>Spaces. Assets. Opportunities.</h2>
+      <p class="sub">We work across multiple real-estate segments, helping individuals, businesses and investors discover the right property opportunity for their needs.</p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service">
+        <div class="service-image img1"></div>
+        <div class="service-content">
+          <div class="service-number">01</div>
+          <h3>Luxury Coworking</h3>
+          <p>Premium coworking and flexible workspace opportunities designed for businesses, founders and professionals seeking exceptional work environments.</p>
+          <div class="service-points"><span>Executive Workspaces</span><span>Private Offices</span><span>Meeting &amp; Conference Rooms</span><span>Premium Business Locations</span></div>
+          <a class="explore" href="#">Explore Coworking →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image img2"></div>
+        <div class="service-content">
+          <div class="service-number">02</div>
+          <h3>Industrial Land</h3>
+          <p>Strategically located industrial land opportunities for businesses, developers and investors seeking long-term commercial potential.</p>
+          <div class="service-points"><span>Strategic Locations</span><span>Industrial Zones</span><span>Development Opportunities</span><span>Investment Assets</span></div>
+          <a class="explore" href="#">Explore Industrial Land →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image img3"></div>
+        <div class="service-content">
+          <div class="service-number">03</div>
+          <h3>Warehouses</h3>
+          <p>Modern warehouse and logistics properties for businesses seeking efficient storage, distribution and industrial infrastructure.</p>
+          <div class="service-points"><span>Logistics Facilities</span><span>Storage Assets</span><span>Industrial Warehouses</span><span>Commercial Infrastructure</span></div>
+          <a class="explore" href="#">Explore Warehouses →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image img4"></div>
+        <div class="service-content">
+          <div class="service-number">04</div>
+          <h3>Luxury Villas</h3>
+          <p>Exceptional villas and premium residences selected for clients looking for distinctive architecture, privacy and an exclusive lifestyle.</p>
+          <div class="service-points"><span>Premium Residences</span><span>Private Villas</span><span>Prime Locations</span><span>Luxury Living</span></div>
+          <a class="explore" href="#">Explore Villas →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image img5"></div>
+        <div class="service-content">
+          <div class="service-number">05</div>
+          <h3>Hotels &amp; Resorts</h3>
+          <p>Hospitality properties and resort opportunities for investors, operators and businesses seeking attractive hospitality assets.</p>
+          <div class="service-points"><span>Luxury Hotels</span><span>Resort Properties</span><span>Hospitality Assets</span><span>Investment Opportunities</span></div>
+          <a class="explore" href="#">Explore Hotels &amp; Resorts →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image img6"></div>
+        <div class="service-content">
+          <div class="service-number">06</div>
+          <h3>Commercial &amp; Investment</h3>
+          <p>Curated commercial real-estate opportunities for businesses and investors seeking strategic properties and long-term value.</p>
+          <div class="service-points"><span>Commercial Properties</span><span>Office Assets</span><span>Investment Opportunities</span><span>Strategic Developments</span></div>
+          <a class="explore" href="#">Explore Opportunities →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="markets">
+    <div class="eyebrow">WHERE WE OPERATE</div>
+    <h2>One Network. Three Markets.</h2>
+    <div class="map"></div>
+    <div class="market-labels"><span>⌖ INDIA</span><span>⌖ DUBAI / UAE</span><span>⌖ SINGAPORE</span></div>
+    <p>Our network connects clients with selected real-estate opportunities across three important global markets.</p>
+  </section>
+
+  <section class="approach">
+    <div class="eyebrow">OUR APPROACH</div>
+    <h2>From Requirement to Opportunity.</h2>
+    <div class="steps">
+      <div class="step"><div class="step-top"><span class="num">01</span><span class="icon">♧</span></div><h3>UNDERSTAND</h3><p>We understand your requirements, property preferences and objectives.</p></div>
+      <div class="step"><div class="step-top"><span class="num">02</span><span class="icon">⌕</span></div><h3>CURATE</h3><p>We identify relevant property opportunities based on your needs.</p></div>
+      <div class="step"><div class="step-top"><span class="num">03</span><span class="icon">▣</span></div><h3>CONNECT</h3><p>We facilitate connections with the right property and people.</p></div>
+      <div class="step"><div class="step-top"><span class="num">04</span><span class="icon">✓</span></div><h3>MOVE FORWARD</h3><p>We support the next stage of your real-estate journey.</p></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div>
+      <h2>Looking for a Specific Opportunity?</h2>
+      <p>Tell us what you're looking for and we'll help you explore the right real-estate opportunities.</p>
+      <div class="cta-buttons"><a href="#">Talk to an Advisor</a><a href="#">Contact Us</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div><div class="footer-logo">SPACERENTIYA</div><div>India · Dubai · Singapore</div></div>
+    <div class="footer-links"><span>Home</span><span>About</span><span>Services</span><span>Contact</span></div>
+    <div>© 2026 SpaceRentiya. All rights reserved.</div>
+  </footer>
+</div>
+
+</body>
+</html>
