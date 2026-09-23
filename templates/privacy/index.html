@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — SpaceRentiya | Real Estate, Advisory &amp; Investment | India, Dubai &amp; Singapore</title>
+<meta name="description" content="Read the SpaceRentiya Privacy Policy — how we collect, use, store, protect and share personal information across our real-estate services in India, Dubai/UAE and Singapore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: #f7f6f0;
+  color: #242424;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+:root {
+  --gold: #b8965c;
+  --gold-dark: #9c7a45;
+  --navy: #07182d;
+  --navy-mid: #0b2038;
+  --cream: #f7f6f0;
+  --border: #e6e4dc;
+  --text-muted: #555;
+  --gutter: clamp(20px, 5vw, 72px);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeUp  { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideRight { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: translateX(0); } }
+
+body { animation: fadeIn 0.5s ease both; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible {
+  opacity: 1;
+  transform: none;
+}
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* ===== HEADER ===== */
+header {
+  height: 80px;
+  background: rgba(247,247,250,0.97);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s ease;
+}
+header.scrolled { box-shadow: 0 4px 24px rgba(7,24,45,0.10); }
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  transition: color var(--transition);
+}
+.logo:hover { color: var(--gold); }
+nav { display: flex; align-items: center; gap: 36px; font-size: 13.5px; }
+nav a {
+  position: relative;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
+}
+nav a:hover { color: var(--gold); }
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.28s ease;
+  border-radius: 2px;
+}
+nav a:hover::after { width: 100%; }
+nav a:first-child { color: #222; }
+nav a:first-child::after { width: 100%; }
+.header-right { display: flex; align-items: center; gap: 22px; }
+.login { font-size: 13px; color: var(--text-muted); font-weight: 600; transition: color var(--transition); }
+.login:hover { color: var(--gold); }
+.book-btn {
+  background: var(--navy);
+  color: white;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: background var(--transition), transform 0.2s ease, box-shadow 0.2s ease;
+}
+.book-btn:hover {
+  background: var(--gold);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(184,150,92,0.35);
+}
+
+/* ===== HAMBURGER ===== */
+.menu-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  align-items: center; justify-content: center;
+  background: transparent; border: 0;
+  cursor: pointer; padding: 0;
+  position: relative; z-index: 200;
+  flex-shrink: 0;
+}
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+  display: block;
+  width: 22px; height: 2px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.32s ease, opacity 0.22s ease, top 0.32s ease;
+}
+.menu-toggle span { position: relative; }
+.menu-toggle span::before, .menu-toggle span::after { content: ""; position: absolute; left: 0; }
+.menu-toggle span::before { top: -7px; }
+.menu-toggle span::after  { top:  7px; }
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5,12,20,0.3);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.nav-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-title { display: none; }
+nav .nav-book { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  width: 100%;
+  min-height: 520px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 100px var(--gutter) 80px;
+  background:
+    linear-gradient(135deg, rgba(5,9,10,0.85) 0%, rgba(5,9,10,0.4) 70%),
+    url("../../images/ChatGPT Image Sep 22, 2026, 09_43_42 AM.png") center/cover no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+.hero-content {
+  max-width: 520px;
+  animation: fadeUp 0.9s 0.15s both ease;
+  position: relative;
+  z-index: 2;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(184,150,92,0.18);
+  border: 1px solid rgba(184,150,92,0.4);
+  color: #d4b47e;
+  padding: 6px 14px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  animation: slideRight 0.8s 0.1s both ease;
+}
+.hero h1 {
+  font: 400 32px/1.1 Georgia, "Times New Roman", serif;
+  margin-bottom: 14px;
+  animation: fadeUp 0.9s 0.25s both ease;
+}
+.hero p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #d8dfe3;
+  max-width: 460px;
+  margin-bottom: 18px;
+  animation: fadeUp 0.9s 0.35s both ease;
+}
+.locations {
+  display: flex;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s 0.45s both ease;
+}
+.locations span::before { content: "â€¢"; color: var(--gold); margin-right: 7px; }
+
+/* ===== ABOUT ===== */
+.about {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: var(--cream);
+  padding: 64px var(--gutter);
+  gap: 40px;
+  align-items: center;
+}
+.about-copy {}
+.about h2 {
+  font: 400 28px/1.12 Georgia, "Times New Roman", serif;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+.about p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 440px;
+  margin-bottom: 14px;
+}
+.about-image { display: flex; align-items: center; overflow: hidden; }
+.about-image div {
+  width: 100%;
+  height: 280px;
+  background: url("../../images/ChatGPT Image Sep 22, 2026, 09_36_11 AM.png") center/cover no-repeat;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(7,24,45,0.14);
+  transition: transform 0.6s ease;
+}
+.about-image:hover div { transform: scale(1.03); }
+
+/* ===== PHILOSOPHY ===== */
+.philosophy {
+  min-height: 180px;
+  text-align: center;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 52px var(--gutter);
+}
+.philosophy h2 {
+  font: 400 26px/1.1 Georgia, "Times New Roman", serif;
+  margin-bottom: 18px;
+}
+.philosophy p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 8px;
+}
+
+/* ===== SERVICES ===== */
+.services { padding: 52px var(--gutter) 64px; background: var(--cream); }
+.services-title { text-align: center; margin-bottom: 32px; }
+.services-title h2 { font: 400 26px Georgia, "Times New Roman", serif; margin-top: 8px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(7,24,45,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding-bottom: 14px;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(7,24,45,0.14);
+}
+.card-image {
+  height: 110px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+.card:hover .card-image { transform: scale(1.06); }
+.c1 { background-image: url("../../images/Screenshot 2026-09-22 093639.png"); }
+.c2 { background-image: url("../../images/Screenshot 2026-09-22 093645.png"); }
+.c3 { background-image: url("../../images/Screenshot 2026-09-22 093652.png"); }
+.c4 { background-image: url("../../images/Screenshot 2026-09-22 093658.png"); }
+.c5 { background-image: url("../../images/Screenshot 2026-09-22 093704.png"); }
+.c6 { background-image: url("../../images/Screenshot 2026-09-22 093712.png"); }
+.card-body { padding: 12px 14px 0; }
+.card-icon { font-size: 16px; color: var(--gold); margin-bottom: 7px; }
+.card h3 { font: 400 13px Georgia, "Times New Roman", serif; margin-bottom: 6px; color: #1a1a18; }
+.card p { font-size: 11px; line-height: 1.55; color: #888; }
+.card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  transition: gap 0.2s ease;
+}
+.card:hover a { gap: 8px; }
+
+/* ===== MARKETS ===== */
+.markets {
+  color: white;
+  text-align: center;
+  padding: 52px var(--gutter);
+  background:
+    linear-gradient(rgba(7,10,10,0.87), rgba(7,10,10,0.87)),
+    url("../../images/ChatGPT Image Sep 22, 2026, 09_41_00 AM.png") center/cover no-repeat;
+}
+.markets h2 { font: 400 26px Georgia, "Times New Roman", serif; margin-bottom: 14px; }
+.market-labels {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.market-labels span::before { content: "âŒ– "; }
+.markets p { font-size: 13px; color: #ccc; max-width: 500px; margin: 0 auto; }
+
+/* ===== APPROACH ===== */
+.approach { background: #faf9f4; text-align: center; padding: 52px var(--gutter) 64px; }
+.approach .eyebrow { margin-bottom: 10px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; }
+.approach h2 { font: 400 26px Georgia, "Times New Roman", serif; margin-bottom: 30px; }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 820px;
+  margin: auto;
+}
+.step { position: relative; padding: 16px 10px; }
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -2%;
+  width: 30%;
+  border-top: 1px solid var(--gold);
+  opacity: 0.5;
+}
+.step:hover { }
+.step-top { display: flex; justify-content: center; align-items: center; gap: 9px; }
+.num { font: 400 18px Georgia, "Times New Roman", serif; color: var(--gold); }
+.circle {
+  width: 30px; height: 30px;
+  border: 1px solid #d1bd99;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 13px;
+  transition: background var(--transition), color var(--transition);
+}
+.step:hover .circle { background: var(--gold); color: #fff; border-color: var(--gold); }
+.step h3 { font-size: 11px; font-weight: 700; margin-top: 10px; letter-spacing: 0.5px; }
+.step p { font-size: 11px; line-height: 1.55; color: #777; max-width: 130px; margin: 8px auto; }
+
+/* ===== VISION ===== */
+.vision {
+  min-height: 200px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 52px var(--gutter);
+  background:
+    linear-gradient(90deg, rgba(4,9,10,0.88), rgba(4,9,10,0.3)),
+    url("../../images/ChatGPT Image Sep 22, 2026, 09_42_59 AM.png") center/cover no-repeat;
+}
+.vision-content { max-width: 440px; }
+.vision h2 { font: 400 24px/1.12 Georgia, "Times New Roman", serif; margin-bottom: 14px; }
+.vision p { font-size: 14px; line-height: 1.75; color: #dde0de; max-width: 420px; }
+.vision .eyebrow { text-align: left; margin-bottom: 12px; color: var(--gold); }
+
+/* ===== BOTTOM CTA ===== */
+.bottom-cta {
+  text-align: center;
+  background: var(--cream);
+  padding: 52px var(--gutter);
+  border-top: 1px solid var(--border);
+}
+.bottom-cta h2 { font: 400 24px Georgia, "Times New Roman", serif; margin-bottom: 12px; }
+.bottom-cta p { font-size: 14px; color: #666; margin-bottom: 22px; }
+.buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.buttons a {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  transition: all var(--transition);
+}
+.buttons a:first-child { background: var(--gold); color: white; }
+.buttons a:first-child:hover { background: var(--gold-dark); border-color: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(184,150,92,0.35); }
+.buttons a:last-child:hover { background: var(--gold); color: #fff; transform: translateY(-2px); }
+
+/* ===== LEGAL / PRIVACY DOC ===== */
+.legal-hero {
+  position: relative;
+  min-height: 460px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 130px var(--gutter) 96px;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 420px at 85% -10%, rgba(184,150,92,0.25), transparent 60%),
+    radial-gradient(700px 380px at 0% 110%, rgba(184,150,92,0.18), transparent 60%),
+    linear-gradient(135deg, #050d1c 0%, #0a2340 55%, #07182d 100%);
+}
+.legal-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(184,150,92,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,150,92,0.06) 1px, transparent 1px);
+  background-size: 62px 62px;
+  -webkit-mask-image: radial-gradient(circle at 50% 35%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 35%, #000 0%, transparent 72%);
+}
+.legal-hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 3px;
+}
+.legal-hero-in {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  animation: fadeUp 0.9s 0.15s both ease;
+}
+.legal-hero .eyebrow {
+  color: #d4b47e;
+  background: rgba(184,150,92,0.14);
+  border-color: rgba(184,150,92,0.45);
+  padding: 7px 16px;
+  letter-spacing: 2.5px;
+  font-size: 10.5px;
+  margin-bottom: 26px;
+}
+.legal-hero h1 {
+  font: 400 clamp(38px, 5vw, 56px)/1.08 Georgia, "Times New Roman", serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  background: linear-gradient(180deg, #fff 50%, #e6d7ba 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.legal-hero-in > p {
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  color: #c9cdd6;
+  margin-bottom: 28px;
+}
+.legal-hero-in > p .sep { color: var(--gold); margin: 0 8px; font-weight: 700; }
+.legal-locations {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  animation: fadeUp 0.9s 0.4s both ease;
+}
+.legal-locations span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #d4b47e;
+  border: 1px solid rgba(184,150,92,0.45);
+  background: rgba(184,150,92,0.12);
+  border-radius: 30px;
+  padding: 9px 20px;
+}
+
+.legal-doc {
+  background:
+    radial-gradient(600px 320px at 0% 0%, rgba(184,150,92,0.10), transparent 60%),
+    radial-gradient(500px 300px at 100% 100%, rgba(184,150,92,0.08), transparent 60%),
+    var(--cream);
+  padding: 72px var(--gutter) 96px;
+}
+.legal-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  background: #fffdf9;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 30px 80px rgba(7,24,45,0.10);
+  padding: clamp(28px, 5vw, 68px);
+}
+.legal-section {
+  border-bottom: 1px solid #efece2;
+  padding-bottom: 34px;
+}
+.legal-section:last-child { border-bottom: 0; padding-bottom: 0; }
+.legal-section h2 {
+  font: 400 22px/1.3 Georgia, "Times New Roman", serif;
+  color: var(--navy);
+  letter-spacing: -0.2px;
+  position: relative;
+  padding-left: 20px;
+  margin: 32px 0 12px;
+}
+.legal-section:first-child h2 { margin-top: 0; }
+.legal-section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--gold), #ecdcc0);
+}
+.legal-section p {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: #4a4a47;
+  margin-bottom: 14px;
+  max-width: 72ch;
+}
+.legal-section p:last-child { margin-bottom: 0; }
+.legal-section ul { list-style: none; padding: 4px 0 0; }
+.legal-section li {
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #4a4a47;
+  padding: 7px 0 7px 28px;
+}
+.legal-section li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 17px;
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  background: var(--gold);
+  opacity: 0.75;
+}
+.legal-contact {
+  background: #f8f3e9;
+  border: 1px solid #e9ddc6;
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 18px 0 4px;
+}
+.legal-contact a {
+  color: var(--gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(156,122,69,0.35);
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+.legal-contact a:hover { color: var(--gold); }
+
+.legal-section.reveal { transition-delay: 0s; }
+.legal-section.reveal:nth-child(3n+2) { transition-delay: 0.06s; }
+.legal-section.reveal:nth-child(3n+3) { transition-delay: 0.12s; }
+
+@media (max-width: 760px) {
+  .legal-hero { min-height: 400px; padding: 116px var(--gutter) 80px; }
+  .legal-doc { padding: 44px var(--gutter) 60px; }
+}
+@media (max-width: 640px) {
+  .legal-hero { min-height: 0; padding: 104px 22px 72px; }
+  .legal-hero h1 { font-size: 34px; }
+  .legal-hero-in > p { font-size: 12px; }
+  .legal-doc { padding: 40px 14px 56px; }
+  .legal-inner { padding: 26px 20px; border-radius: 16px; }
+  .legal-section h2 { font-size: 19px; padding-left: 16px; margin: 28px 0 10px; }
+  .legal-section p, .legal-section li { font-size: 14px; }
+  .legal-locations span { font-size: 10px; padding: 8px 15px; }
+}
+
+/* ===== FOOTER ===== */
+footer {
+  position: relative;
+  background: #060d18;
+  color: #bbb;
+  padding: 0;
+  overflow: hidden;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,150,92,0.65), transparent);
+  z-index: 1;
+}
+footer::after {
+  content: "";
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 460px;
+  background: radial-gradient(closest-side, rgba(184,150,92,0.14), transparent);
+  pointer-events: none;
+}
+
+/* -- CTA band -- */
+.footer-cta {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  padding: 0 var(--gutter);
+}
+.footer-cta-in {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, #1b1610, #2e2518);
+  border: 1px solid rgba(184,150,92,0.45);
+  border-radius: 18px;
+  padding: 30px 36px;
+  box-shadow: 0 26px 60px rgba(0,0,0,0.45);
+}
+.footer-cta-in::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(500px 220px at 100% 0%, rgba(184,150,92,0.22), transparent 60%),
+    radial-gradient(460px 240px at 0% 100%, rgba(184,150,92,0.14), transparent 60%);
+  pointer-events: none;
+}
+.footer-cta-copy, .footer-cta-actions { position: relative; }
+.footer-cta h3 {
+  font: 400 clamp(18px, 2.4vw, 24px)/1.25 Georgia, "Times New Roman", serif;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.footer-cta p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #bdb6a8;
+}
+.footer-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.footer-cta-actions a {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  transition: all var(--transition);
+}
+.fta-primary { background: var(--gold); color: #fff; }
+.fta-primary:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(184,150,92,0.4);
+}
+.fta-secondary { border: 1px solid rgba(184,150,92,0.5); color: #e8dcc3; }
+.fta-secondary:hover {
+  background: rgba(184,150,92,0.16);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* -- Main footer -- */
+.footer-main {
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 50% -12%, rgba(184,150,92,0.10), transparent 55%),
+    #060d18;
+  padding-top: 96px;
+}
+.footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 58px var(--gutter) 48px;
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr 1.1fr 1.1fr;
+  gap: 44px;
+}
+.footer-col { display: flex; flex-direction: column; gap: 14px; }
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-family: Georgia, serif;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+.footer-logo::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  background: var(--gold);
+}
+.footer-tagline {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #9d998f;
+  max-width: 300px;
+}
+.footer-locations {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.footer-locations span {
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  border: 1px solid rgba(184, 150, 92, 0.35);
+  border-radius: 20px;
+  padding: 6px 14px;
+  transition: background var(--transition), color var(--transition);
+}
+.footer-locations span:hover { background: rgba(184,150,92,0.12); color: #e8d5ac; }
+.footer-social { display: flex; gap: 10px; margin-top: 4px; }
+.footer-social a {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(184,150,92,0.35);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #cfc7b6;
+  transition: all var(--transition);
+}
+.footer-social a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(184,150,92,0.35);
+}
+.footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+.footer-title {
+  font-family: Georgia, serif;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding-bottom: 12px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.footer-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gold);
+}
+.footer-links,
+.footer-contact { display: flex; flex-direction: column; gap: 13px; }
+.footer-links a,
+.footer-contact a {
+  color: #bfbcb4;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color var(--transition), transform var(--transition);
+}
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-links a::before {
+  content: "→";
+  color: var(--gold);
+  font-size: 11px;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.footer-links a:hover::before { opacity: 1; transform: translateX(0); }
+.footer-links a:hover,
+.footer-contact a:hover { color: var(--gold); transform: translateX(4px); }
+.footer-contact a {
+  position: relative;
+  padding-left: 18px;
+}
+.footer-contact a::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  transform: rotate(45deg);
+  background: var(--gold);
+  opacity: 0.6;
+}
+.footer-contact span {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #9d998f;
+  overflow-wrap: anywhere;
+}
+.footer-news-intro {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #9d998f;
+  margin-bottom: 2px;
+}
+.footer-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(184,150,92,0.35);
+  border-radius: 50px;
+  padding: 5px 5px 5px 16px;
+  margin-top: 8px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.footer-form:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,150,92,0.16);
+}
+.footer-form input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-size: 12.5px;
+  font-family: inherit;
+}
+.footer-form input::placeholder { color: #7c786d; }
+.footer-form button {
+  width: 38px; height: 38px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition), transform 0.2s ease;
+}
+.footer-form button:hover { background: var(--gold-dark); transform: scale(1.08); }
+.footer-form-hint { font-size: 11px; color: #716d63; margin-top: 10px; }
+.footer-bottom {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 22px var(--gutter);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: #8b877c;
+}
+.footer-bottom-links { display: flex; align-items: center; gap: 22px; }
+.footer-bottom-links a {
+  color: #8b877c;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--transition);
+}
+.footer-bottom-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.25s ease;
+}
+.footer-bottom-links a:hover { color: var(--gold); }
+.footer-bottom-links a:hover::after { width: 100%; }
+.back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold) !important;
+  font-weight: 600;
+}
+.back-top span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  border: 1px solid rgba(184,150,92,0.5);
+  border-radius: 50%;
+  font-size: 11px;
+  transition: background var(--transition), transform var(--transition);
+}
+.back-top:hover span { background: var(--gold); color: #fff; transform: translateY(-2px); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .about { grid-template-columns: 1fr; padding: 44px var(--gutter); gap: 28px; }
+  .about-image div { height: 240px; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: repeat(2, 1fr); gap: 34px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-tagline { max-width: 380px; }
+  .footer-news { grid-column: 1 / -1; }
+  .footer-form { max-width: 360px; }
+  .footer-cta-in { padding: 26px 24px; }
+}
+
+@media (max-width: 640px) {
+  .menu-toggle { display: inline-flex; }
+  .nav-overlay { display: block; }
+
+  header {
+    background: var(--navy) !important;
+    height: 64px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(7,24,45,0.18);
+  }
+  .logo { color: #fff; font-size: 16px; }
+  .book-btn { display: none; }
+  .login { display: none; }
+  .book-btn { padding: 10px 16px; font-size: 12px; background: var(--gold); border-radius: 8px; white-space: nowrap; }
+
+  header.menu-open .menu-toggle span { background: transparent; }
+  header.menu-open .menu-toggle span::before { top: 0; transform: rotate(45deg); }
+  header.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
+
+  nav {
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    width: 100%;
+    background: var(--navy-mid);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 20px 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+    transform: translateY(-101%);
+    visibility: hidden;
+    transition: transform 0.32s ease, visibility 0s linear 0.32s;
+    z-index: 180;
+  }
+  header.menu-open nav {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.32s ease, visibility 0s;
+  }
+  nav .nav-title { display: block; color: var(--gold); font-size: 10px; letter-spacing: 3px; font-weight: 700; padding: 12px 0 6px; }
+  nav a { color: #fff; font-size: 17px; font-weight: 600; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  nav a::after { content: none; }
+  nav .nav-book {
+    display: block;
+    margin-top: 14px;
+    text-align: center;
+    background: var(--gold);
+    border-bottom: 0;
+    border-radius: 8px;
+    padding: 14px 0;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  .header-right { position: relative; z-index: 200; }
+
+  .hero { min-height: 440px; padding: 90px 22px 70px; }
+  .hero h1 { font-size: 27px; margin-bottom: 14px; }
+  .hero p { font-size: 14px; max-width: 100%; }
+  .locations { flex-wrap: wrap; gap: 10px; }
+
+  .about { grid-template-columns: 1fr; padding: 40px 22px; gap: 22px; }
+  .about h2 { font-size: 24px; margin-bottom: 16px; }
+  .about p { font-size: 14px; max-width: 100%; }
+  .about-image div { height: 220px; border-radius: 14px; box-shadow: 0 12px 32px rgba(7,24,45,0.12); }
+
+  .philosophy { padding: 44px 22px; }
+  .philosophy h2 { font-size: 23px; margin-bottom: 16px; }
+  .philosophy p { font-size: 14px; line-height: 1.75; max-width: 100%; }
+
+  .services { padding: 44px 22px 52px; }
+  .services-title h2 { font-size: 22px; }
+  .cards { gap: 12px; }
+  .card-image { height: 105px; }
+  .card h3 { font-size: 12.5px; }
+  .card p { font-size: 11px; }
+
+  .markets { padding: 44px 22px; }
+  .markets h2 { font-size: 22px; margin-bottom: 12px; }
+  .market-labels { gap: 16px; font-size: 11px; }
+  .markets p { font-size: 12px; }
+
+  .approach { padding: 44px 18px 52px; }
+  .approach h2 { font-size: 22px; }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 28px 12px; }
+  .step:not(:last-child)::after { display: none; }
+  .step p { font-size: 11px; max-width: 130px; }
+
+  .vision { min-height: 0; padding: 44px 22px; }
+  .vision h2 { font-size: 22px; }
+  .vision p { font-size: 14px; line-height: 1.75; max-width: 100%; }
+
+  .bottom-cta { padding: 44px 22px; }
+  .bottom-cta h2 { font-size: 22px; }
+  .bottom-cta p { font-size: 13.5px; max-width: 100%; }
+  .buttons { flex-direction: column; align-items: center; gap: 10px; }
+  .buttons a { width: 100%; max-width: 280px; text-align: center; }
+
+  .footer-cta { transform: translateY(-38%); padding: 0 22px; }
+  .footer-cta-in { flex-direction: column; text-align: center; padding: 28px 22px; }
+  .footer-cta-actions { justify-content: center; }
+  .footer-main { padding-top: 78px; }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    text-align: center;
+    padding: 44px 22px 32px;
+  }
+  .footer-brand { grid-column: auto; }
+  .footer-news { grid-column: auto; }
+  .footer-col { align-items: center; }
+  .footer-logo { justify-content: center; }
+  .footer-tagline { max-width: 100%; }
+  .footer-title::after { left: 50%; transform: translateX(-50%); }
+  .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-links a::before { display: none; }
+  .footer-social { justify-content: center; }
+  .footer-locations {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .footer-locations span { white-space: nowrap; }
+  .footer-contact { align-items: center; }
+  .footer-form { width: 100%; max-width: 320px; }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 400px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<header id="main-header">
+  <div class="logo"><a href="../">SPACERENTIYA</a></div>
+  <nav id="main-nav">
+    <div class="nav-title">MENU</div>
+    <a href="../#services">Services</a>
+    <a href="../about/">About</a>
+    <a href="../contact/">Contact</a>
+    <a class="nav-book" href="../contact/">Book Meeting</a>
+  </nav>
+  <div class="header-right">
+    <a class="login" href="#">Investor Login</a>
+    <a class="book-btn" href="../contact/">Book Meeting</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<section class="legal-hero">
+  <div class="legal-hero-in">
+    <div class="eyebrow">SPACERENTIYA &middot; PRIVACY POLICY</div>
+    <h1>Privacy Policy</h1>
+    <p>Effective Date: 22 September 2026 <span class="sep">|</span> Last Updated: 22 September 2026</p>
+    <div class="legal-locations"><span>INDIA</span><span>DUBAI</span><span>SINGAPORE</span></div>
+  </div>
+</section>
+
+<section class="legal-doc">
+  <div class="legal-inner">
+
+    <div class="legal-section reveal">
+      <h2>1. About SpaceRentiya</h2>
+      <p>Welcome to SpaceRentiya (&ldquo;SpaceRentiya&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;).</p>
+      <p>SpaceRentiya is a real-estate services and advisory company providing property-related services and connecting clients with selected real-estate opportunities across India, Dubai/UAE and Singapore.</p>
+      <p>Our services may include residential and commercial real estate, property sales, leasing and rentals, property acquisition assistance, property advisory, real-estate investment opportunities, property sourcing, developer and owner introductions, tenant and landlord services, commercial property services, transaction coordination, real-estate consulting, property-related documentation and support, and other real-estate services.</p>
+      <p>This Privacy Policy explains how SpaceRentiya collects, uses, stores, protects and shares personal information when you use our website, contact us, enquire about a property, request our services, make or receive a payment through our services, or otherwise interact with us.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>2. Information We Collect</h2>
+      <p><strong>Personal Information:</strong> Full name, date of birth where required, email, mobile number, address, nationality, country of residence, identification information, company/organisation name, designation, professional information and communication preferences.</p>
+      <p><strong>Property Information:</strong> Property requirements, preferred location, property type, purchase/rental requirements, budget range, investment preferences, transaction requirements, ownership information, tenant/landlord information, developer information and property documents supplied by you.</p>
+      <p><strong>Technical Information:</strong> IP address, browser and device information, operating system, pages visited, date/time of access, referring website and interaction information.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>3. KYC and Verification Information</h2>
+      <p>For certain transactions or services, SpaceRentiya may conduct identity, compliance or transaction-related verification. Depending on the transaction, we may request government-issued identification, PAN or equivalent tax identification, passport details, address verification, company registration information, corporate documents, ownership documents, authorisation documents, source-of-funds information where legally or contractually required, and other documents required by applicable law or transaction partners.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>4. Payment Information</h2>
+      <p>SpaceRentiya may process information relating to payments for its services and transactions, including payment amount, transaction reference number, payment date/time, payment status, invoice and billing information, payment-provider information, refund information, commission, service charges, booking amounts, security deposits where applicable, and other transaction records.</p>
+      <p>Where payments are processed through a third-party payment gateway, bank or financial institution, payment information may be processed directly by that provider under its own terms and privacy policy.</p>
+      <p>SpaceRentiya does not necessarily store complete debit-card, credit-card or banking credentials on its own systems. Where a third-party payment processor is used, sensitive payment credentials may be handled directly by the payment processor.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>5. How We Use Your Information</h2>
+      <ul>
+        <li>Respond to property enquiries and identify suitable properties.</li>
+        <li>Provide property advisory services and arrange property viewings.</li>
+        <li>Facilitate introductions to property owners, developers and transaction partners.</li>
+        <li>Assist with sales, purchases, leasing and rentals.</li>
+        <li>Manage client relationships, proposals, quotations, invoices and payments.</li>
+        <li>Verify transactions and conduct KYC or compliance checks.</li>
+        <li>Calculate commissions and service fees and maintain transaction records.</li>
+        <li>Provide customer support and schedule meetings.</li>
+        <li>Improve our website and services, maintain security and analyse website usage.</li>
+        <li>Comply with applicable laws and regulatory requirements and resolve disputes.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>6. Property Owners, Developers and Real-Estate Partners</h2>
+      <p>SpaceRentiya may work with property owners, developers, landlords, tenants, buyers, sellers, real-estate brokers, agents, property managers, legal professionals, financial institutions, valuation professionals, consultants and other transaction-related service providers.</p>
+      <p>Where necessary to fulfil your request, relevant information may be shared with the appropriate party. For example, a property enquiry may require us to provide your contact details and enquiry information to the relevant owner, developer, broker or authorised representative.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>7. Property Transactions</h2>
+      <p>SpaceRentiya may facilitate or coordinate certain aspects of a property transaction. Depending on the specific transaction, SpaceRentiya may not be the property owner, developer, landlord, tenant, buyer, seller, lender, legal representative or payment processor.</p>
+      <p>Property-specific terms, transaction agreements, booking forms, engagement letters, invoices, brokerage agreements and other contractual documents may contain additional terms applicable to a particular transaction.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>8. Fees, Commissions and Charges</h2>
+      <p>Depending on the service provided, SpaceRentiya may receive or charge advisory fees, brokerage fees, service fees, consultation fees, transaction fees, property sourcing fees, referral fees, commission or other agreed charges.</p>
+      <p>The applicable amount, payment schedule and responsibility for payment will be communicated through the relevant quotation, proposal, invoice, engagement agreement or transaction document.</p>
+      <p>This Privacy Policy does not itself create a payment obligation. Any payment obligation will arise only where agreed through applicable commercial or transaction documentation.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>9. Refunds and Payment Disputes</h2>
+      <p>Where a refund is applicable, the applicable refund terms will depend on the service purchased, applicable agreement, property transaction, payment provider, reason for refund and applicable law.</p>
+      <p>Refunds may be processed through the original payment method where technically and legally possible. Payment disputes should be reported to SpaceRentiya as soon as reasonably possible with the relevant transaction details.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>10. International Transactions and Data Processing</h2>
+      <p>SpaceRentiya may provide services relating to properties and transactions in India, Dubai/UAE and Singapore. Personal information may therefore be processed or transferred across jurisdictions where necessary to provide requested services or complete a transaction.</p>
+      <p>Different countries may have different privacy and data-protection requirements. SpaceRentiya will take reasonable measures appropriate to applicable legal and operational requirements.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>11. Cookies and Website Technologies</h2>
+      <p>Our website may use cookies, analytics technologies, session technologies, security technologies, performance monitoring tools and similar technologies to operate the website, remember preferences, understand visitor behaviour, improve performance, detect security issues and measure traffic.</p>
+      <p>You may control certain cookies through your browser settings.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>12. Sharing of Personal Information</h2>
+      <p>SpaceRentiya may share personal information where reasonably necessary with property owners, developers, buyers, sellers, landlords, tenants, brokers, agents, property managers, legal and professional advisors, banks and financial institutions, payment processors, accounting providers, technology and hosting providers, CRM and communication providers, analytics providers, compliance providers, government authorities, regulators and law-enforcement authorities where legally required.</p>
+      <p>We do not intend to sell your personal information as an independent commercial product.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>13. Legal and Regulatory Disclosure</h2>
+      <p>SpaceRentiya may disclose information where reasonably necessary to comply with applicable law, respond to lawful government requests, meet regulatory requirements, prevent fraud, investigate unlawful activity, protect the rights and property of SpaceRentiya, protect clients and users, enforce contracts and resolve legal disputes.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>14. Data Security</h2>
+      <p>SpaceRentiya uses reasonable technical and organisational safeguards designed to protect personal information against unauthorised access, disclosure, loss, misuse, alteration and destruction. However, no website, electronic transmission or storage system can be guaranteed to be completely secure.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>15. Data Retention</h2>
+      <p>We may retain personal information for as long as reasonably necessary for providing services, maintaining client relationships, completing transactions, accounting and financial records, tax requirements, legal and regulatory compliance, fraud prevention, dispute resolution, contract enforcement and business recordkeeping.</p>
+      <p>When information is no longer required, we may delete, anonymise or securely dispose of it subject to applicable legal requirements.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>16. Your Data Protection Rights</h2>
+      <p>Subject to applicable law, you may have rights regarding your personal information, including access to relevant information, correction of inaccurate information, deletion where legally applicable, withdrawal of consent where processing is based on consent, and the ability to raise privacy-related complaints.</p>
+      <p>India&rsquo;s Digital Personal Data Protection framework provides mechanisms concerning personal-data processing and individual rights, subject to the applicable commencement and rules.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>17. Marketing Communications</h2>
+      <p>With appropriate consent or where otherwise permitted by applicable law, SpaceRentiya may send information about new properties, property launches, real-estate opportunities, market updates, services, events and company announcements.</p>
+      <p>You may request to stop receiving marketing communications. Essential service-related communications concerning an existing enquiry, transaction, payment, appointment or contractual relationship may still be sent.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>18. Third-Party Websites</h2>
+      <p>Our website may contain links to third-party websites, property portals, payment providers, developers, financial institutions or other services. SpaceRentiya does not control the privacy practices of third-party websites. You should review their respective privacy policies before providing personal information.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>19. Children&rsquo;s Privacy</h2>
+      <p>SpaceRentiya&rsquo;s services are intended primarily for adults and business users. We do not knowingly collect personal information from children in circumstances where such collection is prohibited by applicable law.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>20. Fraud and Security</h2>
+      <p>SpaceRentiya may use information to detect and prevent fraudulent transactions, fake property enquiries, identity misuse, payment fraud, account misuse, unauthorised access and other unlawful or harmful activity. We may suspend or restrict access to services where reasonably necessary to protect users, transactions or the platform.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>21. Changes to This Privacy Policy</h2>
+      <p>SpaceRentiya may update this Privacy Policy from time to time due to changes in our business, services, technology, applicable laws, data-processing practices or regulatory requirements. The updated version will be published on this page with a revised Last Updated date.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>22. Governing Law</h2>
+      <p>This Privacy Policy shall be interpreted in accordance with applicable laws. For personal-data processing connected with India, applicable Indian data-protection laws and regulations may apply. For services or transactions involving other jurisdictions, additional local laws and contractual requirements may apply.</p>
+    </div>
+
+    <div class="legal-section reveal">
+      <h2>23. Contact SpaceRentiya</h2>
+      <p>SpaceRentiya<br>Real Estate | Advisory | Property Services<br>India | Dubai/UAE | Singapore</p>
+      <p class="legal-contact">
+        Email: <a href="mailto:info.spacerentiya@gmail.com">info.spacerentiya@gmail.com</a><br>
+        Phone: <a href="tel:+919784626443">+91 97846 26443</a> &nbsp;|&nbsp; <a href="tel:+917690086335">+91 76900 86335</a>
+      </p>
+      <p>Jaipur, Rajasthan 302015</p>
+    </div>
+
+  </div>
+</section>
+<footer>
+  <div class="footer-cta">
+    <div class="footer-cta-in">
+      <div class="footer-cta-copy">
+        <h3>Ready to find the right property?</h3>
+        <p>Book a private consultation with our advisors across India, Dubai &amp; Singapore.</p>
+      </div>
+      <div class="footer-cta-actions">
+        <a class="fta-primary" href="../contact/">Book a Meeting</a>
+        <a class="fta-secondary" href="mailto:info.spacerentiya@gmail.com">Email Us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-main">
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo">SPACERENTIYA</div>
+        <p class="footer-tagline">Luxury real estate, investment &amp; advisory crafted for the world&rsquo;s most discerning investors.</p>
+        <div class="footer-locations"><span>India</span><span>Dubai</span><span>Singapore</span></div>
+        <div class="footer-social">
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.2 1.3-1.9 1.4-.5.2-1.1.2-1.9-.1-.5-.2-1.1-.5-1.9-1-1.5-1-3-2.6-3.9-4.5-.5-.9-.8-1.7-.8-2.4 0-.7.5-1.3.9-1.6.2-.2.5-.3.7-.3h.5c.2 0 .4-.1.6.5l.9 2.1c.1.1.1.3 0 .4l-.4.6-.5.6c-.1.1-.3.2-.1.5.2.3.8 1.4 1.8 2.3 1.2 1.1 2.2 1.4 2.6 1.6.3.1.4.1.5 0l.8-1c.1-.2.3-.1.5-.1l2.1 1c.3.2.5.3.6.3.1.2.1.6-.1.8z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 1.8.24 2.2.4.6.23 1 .5 1.4 1 .5.4.8.9 1 1.4.16.4.34 1 .4 2.2.07 1.3.07 1.6.07 4.8s0 3.5-.07 4.8c-.06 1.2-.24 1.8-.4 2.2a3.8 3.8 0 0 1-1 1.4c-.4.4-.9.8-1.4 1-.4.16-1 .34-2.2.4-1.3.07-1.6.07-4.8.07s-3.5 0-4.8-.07c-1.2-.06-1.8-.24-2.2-.4a3.8 3.8 0 0 1-1.4-1 3.8 3.8 0 0 1-1-1.4c-.16-.4-.34-1-.4-2.2C2.2 15.5 2.2 15.2 2.2 12s0-3.5.07-4.8c.06-1.2.24-1.8.4-2.2.23-.6.5-1 1-1.4.4-.4.9-.8 1.4-1 .4-.16 1-.34 2.2-.4C8.5 2.2 8.8 2.2 12 2.2zm0 2.2c-3.1 0-3.5 0-4.7.07-1.1.05-1.5.19-1.7.32-.4.16-.6.32-.9.6-.3.3-.5.5-.6.9-.13.2-.27.6-.32 1.7C3.7 8.5 3.7 8.9 3.7 12s0 3.5.07 4.7c.05 1.1.19 1.5.32 1.7.16.4.32.6.6.9.3.3.5.5.9.6.2.13.6.27 1.7.32 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c1.1-.05 1.5-.19 1.7-.32.4-.16.6-.32.9-.6.3-.3.5-.5.6-.9.13-.2.27-.6.32-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.05-1.1-.19-1.5-.32-1.7a2.4 2.4 0 0 0-.6-.9 2.4 2.4 0 0 0-.9-.6c-.2-.13-.6-.27-1.7-.32C15.5 4.4 15.1 4.4 12 4.4zm0 3.4a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4zm0 2.2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm4.3-2.3a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.5c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3zM4.9 7.4a2 2 0 1 1 2-2 2 2 0 0 1-2 2zM6.6 20.4H3.3V9h3.3z"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.3 2H21l-6.4 7.3L22 22h-6.9l-4.6-6-5.6 6H3.4l6.9-7.9L2 2h7.1l4.1 5.4L18.3 2zm-1 18h1.8L7.1 3.9H5.2L17.3 20z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Explore</div>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../about/">About</a>
+          <a href="../#services">Services</a>
+          <a href="../contact/">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Get in Touch</div>
+        <div class="footer-contact">
+          <a href="mailto:info.spacerentiya@gmail.com">info.spacerentiya@gmail.com</a>
+          <a href="tel:+919784626443">+91 97846 26443</a>
+          <a href="tel:+917690086335">+91 76900 86335</a>
+          <span>Jaipur, Rajasthan 302015</span>
+        </div>
+      </div>
+
+      <div class="footer-col footer-news">
+        <div class="footer-title">Stay Updated</div>
+        <p class="footer-news-intro">Markets shift fast. Get the latest listings &amp; insights in your inbox.</p>
+        <form class="footer-form" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" aria-label="Email address">
+          <button type="submit" aria-label="Subscribe">&rarr;</button>
+        </form>
+        <p class="footer-form-hint">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 SpaceRentiya. All rights reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a>
+        <a href="#" class="back-top">Back to top <span>&#8593;</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('menu-toggle');
+  var header = document.getElementById('main-header');
+  var overlay = document.getElementById('nav-overlay');
+
+  function openMenu() {
+    header.classList.add('menu-open');
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    header.classList.remove('menu-open');
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (toggle && header) {
+    toggle.addEventListener('click', function () {
+      header.classList.contains('menu-open') ? closeMenu() : openMenu();
+    });
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    document.getElementById('main-nav').querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* Scroll Reveal */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+})();
+</script>
+</body>
+</html>

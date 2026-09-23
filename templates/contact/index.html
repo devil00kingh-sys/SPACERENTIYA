@@ -2,269 +2,741 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SpaceRentiya — Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact SpaceRentiya — Let's Find the Right Opportunity</title>
+<meta name="description" content="Contact SpaceRentiya to explore premium real estate opportunities in India, Dubai and Singapore. Book a consultation or send an enquiry today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f5ef;color:#292929}
-a{text-decoration:none;color:inherit}
-.page{width:100%;max-width:1200px;margin:auto;overflow:hidden}
-header{
- height:84px;background:#f7f7fa;display:flex;align-items:center;
- justify-content:space-between;padding:0 46px;position:relative;z-index:10;
- border-bottom:1px solid #ecebe4
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: #f6f5ef;
+  color: #292929;
+  overflow-x: hidden;
 }
-.logo{
- font-size:20px;font-weight:800;letter-spacing:1px;color:#07182d;
- font-family:Arial,Helvetica,sans-serif;white-space:nowrap
+a { text-decoration: none; color: inherit; }
+:root {
+  --gold: #b8965c;
+  --gold-dark: #9c7a45;
+  --navy: #07182d;
+  --navy-mid: #0b2038;
+  --cream: #f7f6f0;
+  --border: #e6e4dc;
+  --text-muted: #555;
+  --gutter: clamp(20px, 5vw, 72px);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-nav{display:flex;align-items:center;gap:38px;font-size:14px}
-nav a{
- position:relative;color:#555;font-weight:600;letter-spacing:.3px;
- padding:8px 2px;transition:color .25s ease
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeUp  { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideRight { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+
+body { animation: fadeIn 0.5s ease both; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
 }
-nav a:hover{color:#b8965c}
-nav a::after{
- content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
- background:#b8965c;transition:width .25s ease
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
 }
-nav a:hover::after,
-nav a:first-child::after{width:100%}
-nav a:first-child{color:#222}
-.header-right{display:flex;align-items:center;gap:26px}
-.login{font-size:13px;color:#555;font-weight:600}
-.book-btn{
- background:#07182d;color:white;border-radius:6px;padding:14px 26px;
- font-size:13px;font-weight:700;letter-spacing:.3px;transition:background .25s ease
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
 }
-.book-btn:hover{background:#b8965c}
-
-/* HERO */
-.hero{
-width:100vw;margin-left:calc(50% - 50vw);
-min-height:300px;color:#fff;display:flex;align-items:center;padding:0 47px;
-background:linear-gradient(90deg,rgba(4,9,11,.84),rgba(4,9,11,.16)),
-url("../../images/ChatGPT Image Sep 22, 2026, 09_45_14 AM.png") center/cover no-repeat
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
 }
-.hero-content{max-width:455px}
-.eyebrow{font-size:6px;letter-spacing:1.1px;color:#b69659;font-weight:700;margin-bottom:8px}
-.hero h1{font:400 27px/1.04 Georgia,"Times New Roman",serif;margin-bottom:10px}
-.hero p{font-size:7px;line-height:1.5;color:#dedede;max-width:390px;margin-bottom:11px}
-.hero-buttons{display:flex;gap:8px;margin-bottom:12px}
-.hero-buttons a{font-size:6px;padding:7px 13px;border:1px solid #d0a65b}
-.hero-buttons a:first-child{background:#bd9854;color:#fff}
-.locations{display:flex;gap:17px;font-size:6px;letter-spacing:1px}
-.locations span:before{content:"•";color:#c49e5b;margin-right:5px}
-
-/* CONTACT PANELS */
-.contact-area{padding:14px 45px 15px;background:#f6f5ef}
-.panels{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.panel{
-border:1px solid #e2dfd6;background:#f9f8f3;padding:16px 18px;
-min-height:282px
+.reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible {
+  opacity: 1;
+  transform: none;
 }
-.panel .eyebrow{text-align:left;margin-bottom:7px}
-.panel h2{font:400 18px/1.08 Georgia,serif;margin-bottom:10px}
-.panel-intro{font-size:6.5px;line-height:1.5;color:#666;max-width:330px;margin-bottom:11px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-input,select,textarea{
-width:100%;border:1px solid #ddd9cf;background:#faf9f4;
-padding:7px 8px;font-family:Arial;font-size:6px;color:#666;
-margin-bottom:6px;outline:none
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+
+/* ===== HEADER ===== */
+header {
+  height: 80px;
+  background: rgba(247,247,250,0.97);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s ease;
 }
-textarea{height:49px;resize:none}
-.form-btn{border:0;background:#bd9854;color:#fff;padding:7px 14px;font-size:6px;cursor:pointer}
-.meeting-image{
-height:122px;background:
-linear-gradient(rgba(8,10,9,.1),rgba(8,10,9,.1)),
-url("../../images/ChatGPT Image Sep 22, 2026, 06_09_58 PM.png") center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;margin:8px 0 11px
+header.scrolled { box-shadow: 0 4px 24px rgba(7,24,45,0.10); }
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  transition: color var(--transition);
 }
-.meeting-image a{background:#bd9854;color:white;font-size:6px;padding:8px 19px}
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.benefit{text-align:left}
-.benefit-icon{font-size:13px;color:#ae8d57;margin-bottom:4px}
-.benefit h3{font-size:6px;margin-bottom:3px}
-.benefit p{font-size:5.5px;line-height:1.35;color:#777}
-
-/* THREE OPTIONS */
-.options{background:#faf9f4;padding:11px 45px 10px;border-top:1px solid #e6e3da}
-.options-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.option{text-align:center;border-right:1px solid #ddd9d0;padding:4px 20px}
-.option:last-child{border-right:0}
-.option-icon{font-size:18px;color:#ae8d57;margin-bottom:5px}
-.option h3{font-size:6.5px;margin-bottom:4px}
-.option p{font-size:5.5px;line-height:1.35;color:#777}
-
-/* MARKETS */
-.markets{
-height:144px;color:#fff;text-align:center;padding:11px 25px;
-background:linear-gradient(rgba(8,10,10,.84),rgba(8,10,10,.84)),
-url("../../images/ChatGPT Image Sep 22, 2026, 09_41_00 AM.png") center/cover no-repeat
+.logo:hover { color: var(--gold); }
+nav { display: flex; align-items: center; gap: 36px; font-size: 13.5px; }
+nav a {
+  position: relative;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
 }
-.markets .eyebrow{margin-bottom:4px}
-.markets h2{font:400 19px Georgia,serif;margin-bottom:4px}
-.map{height:72px;max-width:600px;margin:auto;background:url("../../images/world-map.jpg") center/cover no-repeat;opacity:.68}
-.market-labels{display:flex;justify-content:space-around;max-width:570px;margin:-4px auto 0;color:#bc9858;font-size:7px}
-.markets p{font-size:6px;color:#d2d2d2;margin-top:5px}
-
-/* OPPORTUNITIES */
-.opportunities{background:#f8f7f1;padding:11px 45px 13px}
-.opportunities h2{text-align:center;font:400 18px Georgia,serif;margin-bottom:10px}
-.opportunity-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
-.opp{border:1px solid #e1ded5;background:#faf9f4;padding-bottom:5px}
-.opp-image{height:65px;background-position:center;background-size:cover}
-.o1{background-image:url("../../images/Screenshot 2026-09-22 093639.png")}
-.o2{background-image:url("../../images/Screenshot 2026-09-22 093645.png")}
-.o3{background-image:url("../../images/Screenshot 2026-09-22 093652.png")}
-.o4{background-image:url("../../images/Screenshot 2026-09-22 093658.png")}
-.o5{background-image:url("../../images/Screenshot 2026-09-22 093704.png")}
-.o6{background-image:url("../../images/Screenshot 2026-09-22 093712.png")}
-.opp-body{padding:5px 6px}
-.opp h3{font:400 7px Georgia,serif;margin-bottom:4px}
-.opp a{font-size:5.5px;color:#a27f42}
-
-/* CTA */
-.cta{
-height:91px;color:white;display:flex;align-items:center;justify-content:center;text-align:center;
-background:linear-gradient(rgba(5,9,10,.72),rgba(5,9,10,.72)),
-url("../../images/ChatGPT Image Sep 22, 2026, 06_08_42 PM.png") center/cover no-repeat
+nav a:hover { color: var(--gold); }
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.28s ease;
+  border-radius: 2px;
 }
-.cta h2{font:400 19px Georgia,serif;margin-bottom:5px}
-.cta p{font-size:6.5px;color:#ddd;margin-bottom:8px}
-.cta-buttons{display:flex;justify-content:center;gap:8px}
-.cta-buttons a{font-size:6px;padding:6px 15px;border:1px solid #c39d59}
-.cta-buttons a:first-child{background:#bd9854}
-
-/* FOOTER */
-footer{
-min-height:44px;background:#0b1012;color:#aaa;padding:7px 45px;
-display:flex;align-items:center;justify-content:space-between;font-size:5.5px
+nav a:hover::after { width: 100%; }
+nav a:last-child { color: #222; }
+nav a:last-child::after { width: 100%; }
+.header-right { display: flex; align-items: center; gap: 22px; }
+.login { font-size: 13px; color: var(--text-muted); font-weight: 600; transition: color var(--transition); }
+.login:hover { color: var(--gold); }
+.book-btn {
+  background: var(--navy);
+  color: white;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: background var(--transition), transform 0.2s ease, box-shadow 0.2s ease;
 }
-.footer-logo{font:8px Georgia,serif;color:#fff;letter-spacing:.8px;margin-bottom:2px}
-.footer-links{display:flex;gap:21px;color:#bbb}
-
-/* ============ GLOBAL REFINEMENT: spacing & readability ============ */
-:root{--gutter:clamp(22px,5vw,80px)}
-.page{overflow:visible}
-
-/* HEADER */
-header{padding-left:var(--gutter);padding-right:var(--gutter)}
-
-/* HERO */
-.hero{padding:0 var(--gutter)}
-.eyebrow{font-size:10px}
-.hero h1{font-size:32px;margin-bottom:14px}
-.hero p{font-size:14px;line-height:1.7;max-width:460px;margin-bottom:14px}
-.hero-buttons{gap:10px;margin-bottom:14px}
-.hero-buttons a{font-size:11px;padding:9px 15px}
-.locations{font-size:12px;gap:20px}
-
-/* CONTACT PANELS */
-.contact-area{padding:44px var(--gutter) 46px}
-.panels{gap:18px}
-.panel{padding:20px 22px;min-height:auto}
-.panel h2{font-size:22px;margin-bottom:14px}
-.panel-intro{font-size:13px;line-height:1.7;margin-bottom:14px}
-input,select,textarea{font-size:12px;padding:10px 12px;margin-bottom:9px}
-textarea{height:84px}
-.form-btn{font-size:12px;padding:10px 18px}
-.meeting-image{height:150px;margin:10px 0 14px}
-.meeting-image a{font-size:11px;padding:10px 22px}
-.benefit-icon{font-size:17px}
-.benefit h3{font-size:11px;margin-bottom:5px}
-.benefit p{font-size:11px;line-height:1.5}
-
-/* THREE OPTIONS */
-.options{padding:28px var(--gutter)}
-.option{padding:14px 20px}
-.option-icon{font-size:24px;margin-bottom:8px}
-.option h3{font-size:12px;margin-bottom:6px}
-.option p{font-size:11px;line-height:1.5}
-
-/* MARKETS */
-.markets{height:auto;padding:30px var(--gutter)}
-.markets .eyebrow{margin-bottom:6px}
-.markets h2{font-size:22px;margin-bottom:10px}
-.map{height:80px;max-width:650px;margin:0 auto}
-.market-labels{font-size:12px;letter-spacing:1px;margin:10px auto 0}
-.markets p{font-size:11px;color:#d6d6d6;margin-top:12px}
-
-/* OPPORTUNITIES */
-.opportunities{padding:38px var(--gutter) 44px}
-.opportunities h2{font-size:22px;margin-bottom:16px}
-.opportunity-grid{gap:12px}
-.opp{padding-bottom:10px}
-.opp-image{height:95px}
-.opp-body{padding:8px 10px}
-.opp h3{font-size:12px;margin-bottom:5px}
-.opp a{font-size:11px}
-
-/* CTA */
-.cta{height:auto;min-height:150px;padding:30px var(--gutter)}
-.cta h2{font-size:22px;margin-bottom:8px}
-.cta p{font-size:12px;margin-bottom:12px}
-.cta-buttons{gap:10px}
-.cta-buttons a{font-size:11px;padding:9px 18px}
-
-/* FOOTER */
-footer{min-height:auto;padding:16px var(--gutter);font-size:11px}
-.footer-logo{font-size:13px}
-.footer-links{font-size:11px;gap:26px}
-
-@media(max-width:800px){
-header{padding:0 20px}
-nav{gap:15px}
-.contact-area{padding:14px 25px}
-.panels{grid-template-columns:1fr}
-.options{padding-left:25px;padding-right:25px}
-.opportunities{padding-left:25px;padding-right:25px}
-.opportunity-grid{grid-template-columns:repeat(3,1fr)}
+.book-btn:hover {
+  background: var(--gold);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(184,150,92,0.35);
 }
-@media(max-width:520px){
-header{height:auto;padding:18px 20px;flex-wrap:wrap;gap:16px}
-nav{order:3;width:100%;justify-content:center;overflow:auto}
-.header-right{margin-left:auto}
-.login{display:none}
-.hero{width:100vw;margin-left:calc(50% - 50vw);min-height:300px;padding:0 25px}
-.hero h1{font-size:24px}
-.contact-area{padding:12px 15px}
-.form-row{grid-template-columns:1fr}
-.options{padding-left:15px;padding-right:15px}
-.options-grid{grid-template-columns:1fr}
-.option{border-right:0;border-bottom:1px solid #ddd9d0;padding:10px}
-.option:last-child{border-bottom:0}
-.opportunities{padding-left:15px;padding-right:15px}
-.opportunity-grid{grid-template-columns:repeat(2,1fr)}
-footer{padding:8px 15px}
-.footer-links{display:none}
+
+/* ===== HAMBURGER ===== */
+.menu-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  align-items: center; justify-content: center;
+  background: transparent; border: 0;
+  cursor: pointer; padding: 0;
+  position: relative; z-index: 200;
+  flex-shrink: 0;
+}
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+  display: block;
+  width: 22px; height: 2px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.32s ease, opacity 0.22s ease, top 0.32s ease;
+}
+.menu-toggle span { position: relative; }
+.menu-toggle span::before, .menu-toggle span::after { content: ""; position: absolute; left: 0; }
+.menu-toggle span::before { top: -7px; }
+.menu-toggle span::after  { top:  7px; }
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5,12,20,0.3);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.nav-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-title { display: none; }
+nav .nav-book { display: none; }
+
+/* ===== HERO ===== */
+.hero {
+  width: 100%;
+  min-height: 380px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 80px var(--gutter);
+  background:
+    linear-gradient(135deg, rgba(4,9,11,0.88) 0%, rgba(4,9,11,0.25) 70%),
+    url("../../images/ChatGPT Image Sep 22, 2026, 09_45_14 AM.png") center/cover no-repeat;
+  overflow: hidden;
+}
+.hero-content {
+  max-width: 500px;
+  animation: fadeUp 0.9s 0.15s both ease;
+  position: relative;
+  z-index: 2;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(184,150,92,0.18);
+  border: 1px solid rgba(184,150,92,0.4);
+  color: #d4b47e;
+  padding: 6px 14px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  animation: slideRight 0.8s 0.1s both ease;
+}
+.hero h1 {
+  font: 400 34px/1.08 Georgia, "Times New Roman", serif;
+  margin-bottom: 14px;
+  animation: fadeUp 0.9s 0.25s both ease;
+}
+.hero p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #d8dfe3;
+  max-width: 440px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.9s 0.35s both ease;
+}
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s 0.45s both ease;
+}
+.hero-buttons a {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  transition: all var(--transition);
+}
+.hero-buttons a:first-child { background: var(--gold); color: #fff; }
+.hero-buttons a:first-child:hover { background: var(--gold-dark); transform: translateY(-2px); }
+.hero-buttons a:last-child:hover { background: rgba(184,150,92,0.15); transform: translateY(-2px); }
+.locations {
+  display: flex;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s 0.5s both ease;
+}
+.locations span::before { content: "•"; color: var(--gold); margin-right: 7px; }
+
+/* ===== CONTACT PANELS ===== */
+.contact-area { padding: 60px var(--gutter) 64px; background: var(--cream); }
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.panel {
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 30px;
+  box-shadow: 0 6px 28px rgba(7,24,45,0.07);
+  transition: box-shadow var(--transition);
+}
+.panel:hover { box-shadow: 0 12px 40px rgba(7,24,45,0.12); }
+.panel .eyebrow { text-align: left; margin-bottom: 10px; }
+.panel h2 {
+  font: 400 24px/1.1 Georgia, serif;
+  margin-bottom: 14px;
+  color: var(--navy);
+}
+.panel-intro { font-size: 14px; line-height: 1.75; color: #666; margin-bottom: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-group { margin-bottom: 12px; }
+.form-label { display: block; font-size: 12px; color: #777; font-weight: 500; margin-bottom: 5px; }
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #ddd9cf;
+  background: #faf9f4;
+  padding: 11px 14px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  color: #444;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  -webkit-appearance: none;
+  appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,150,92,0.12);
+}
+textarea { height: 110px; resize: vertical; }
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+.form-btn {
+  border: 0;
+  background: var(--gold);
+  color: #fff;
+  padding: 13px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 6px;
+  transition: background var(--transition), transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Inter', Arial, sans-serif;
+}
+.form-btn:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184,150,92,0.35);
+}
+
+.meeting-image {
+  height: 170px;
+  background:
+    linear-gradient(rgba(7,10,9,0.15), rgba(7,10,9,0.15)),
+    url("../../images/ChatGPT Image Sep 22, 2026, 06_09_58 PM.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+.meeting-image:hover { transform: scale(1.02); }
+.meeting-image a {
+  background: var(--gold);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 8px;
+  transition: background var(--transition), transform 0.2s ease;
+}
+.meeting-image a:hover { background: var(--gold-dark); transform: translateY(-2px); }
+.benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.benefit { text-align: left; }
+.benefit-icon { font-size: 20px; color: var(--gold); margin-bottom: 7px; }
+.benefit h3 { font-size: 12px; font-weight: 700; margin-bottom: 5px; color: var(--navy); }
+.benefit p { font-size: 12px; line-height: 1.55; color: #777; }
+
+/* ===== THREE OPTIONS ===== */
+.options {
+  background: #faf9f4;
+  padding: 40px var(--gutter);
+  border-top: 1px solid var(--border);
+}
+.options-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.option {
+  text-align: center;
+  border-right: 1px solid var(--border);
+  padding: 24px 24px;
+  transition: background var(--transition);
+}
+.option:last-child { border-right: 0; }
+.option:hover { background: var(--cream); }
+.option-icon { font-size: 26px; color: var(--gold); margin-bottom: 10px; }
+.option h3 { font-size: 12px; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; color: var(--navy); }
+.option p { font-size: 12px; line-height: 1.55; color: #777; }
+
+/* ===== MARKETS ===== */
+.markets {
+  color: #fff;
+  text-align: center;
+  padding: 52px var(--gutter);
+  background:
+    linear-gradient(rgba(7,10,10,0.88), rgba(7,10,10,0.88)),
+    url("../../images/ChatGPT Image Sep 22, 2026, 09_41_00 AM.png") center/cover no-repeat;
+}
+.markets .eyebrow { margin-bottom: 8px; color: var(--gold); }
+.markets h2 { font: 400 26px Georgia, serif; margin-bottom: 16px; }
+.market-labels {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.market-labels span::before { content: "⌖ "; }
+.markets p { font-size: 13px; color: #ccc; max-width: 520px; margin: 0 auto; }
+
+/* ===== OPPORTUNITIES ===== */
+.opportunities { background: var(--cream); padding: 52px var(--gutter) 64px; }
+.opportunities .eyebrow { text-align: center; margin-bottom: 8px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; }
+.opportunities h2 { text-align: center; font: 400 26px Georgia, serif; margin-bottom: 28px; }
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+.opp {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(7,24,45,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding-bottom: 12px;
+}
+.opp:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(7,24,45,0.14);
+}
+.opp-image {
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+.opp:hover .opp-image { transform: scale(1.07); }
+.o1 { background-image: url("../../images/Screenshot 2026-09-22 093639.png"); }
+.o2 { background-image: url("../../images/Screenshot 2026-09-22 093645.png"); }
+.o3 { background-image: url("../../images/Screenshot 2026-09-22 093652.png"); }
+.o4 { background-image: url("../../images/Screenshot 2026-09-22 093658.png"); }
+.o5 { background-image: url("../../images/Screenshot 2026-09-22 093704.png"); }
+.o6 { background-image: url("../../images/Screenshot 2026-09-22 093712.png"); }
+.opp-body { padding: 10px 12px; }
+.opp h3 { font: 400 12px Georgia, serif; margin-bottom: 5px; color: #1a1a18; }
+.opp a { font-size: 11px; font-weight: 600; color: var(--gold-dark); transition: gap 0.2s ease; display: inline-flex; align-items: center; gap: 4px; }
+.opp:hover a { gap: 8px; }
+
+/* ===== CTA ===== */
+.cta {
+  min-height: 200px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 52px var(--gutter);
+  background:
+    linear-gradient(rgba(4,8,10,0.78), rgba(4,8,10,0.78)),
+    url("../../images/ChatGPT Image Sep 22, 2026, 06_08_42 PM.png") center/cover no-repeat;
+}
+.cta h2 { font: 400 26px Georgia, serif; margin-bottom: 10px; }
+.cta p { font-size: 14px; color: #ddd; margin-bottom: 22px; }
+.cta-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.cta-buttons a {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  transition: all var(--transition);
+}
+.cta-buttons a:first-child { background: var(--gold); color: #fff; }
+.cta-buttons a:first-child:hover { background: var(--gold-dark); border-color: var(--gold-dark); transform: translateY(-2px); }
+.cta-buttons a:last-child:hover { background: rgba(184,150,92,0.15); transform: translateY(-2px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0b1012;
+  color: #bbb;
+  border-top: 1px solid rgba(184, 150, 92, 0.25);
+  padding: 0;
+}
+.footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 58px var(--gutter) 44px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-col { display: flex; flex-direction: column; gap: 14px; }
+.footer-logo {
+  font-family: Georgia, serif;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+.footer-tagline {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #999;
+  max-width: 300px;
+}
+.footer-locations {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.footer-locations span {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  border: 1px solid rgba(184, 150, 92, 0.35);
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+.footer-title {
+  font-family: Georgia, serif;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding-bottom: 12px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.footer-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gold);
+}
+.footer-links,
+.footer-contact { display: flex; flex-direction: column; gap: 13px; }
+.footer-links a,
+.footer-contact a {
+  color: #bbb;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color var(--transition), transform var(--transition);
+}
+.footer-links a:hover,
+.footer-contact a:hover { color: var(--gold); transform: translateX(4px); }
+.footer-contact span {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #999;
+  overflow-wrap: anywhere;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: #888;
+}
+.footer-bottom-links { display: flex; gap: 22px; }
+.footer-bottom-links a {
+  color: #888;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-bottom-links a:hover { color: var(--gold); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .opportunity-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .panels { grid-template-columns: 1fr; }
+  .options-grid { grid-template-columns: 1fr; }
+  .option { border-right: 0; border-bottom: 1px solid var(--border); padding: 18px 20px; }
+  .option:last-child { border-bottom: 0; }
+  .opportunity-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: repeat(2, 1fr); gap: 34px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-tagline { max-width: 380px; }
+}
+@media (max-width: 640px) {
+  .menu-toggle { display: inline-flex; }
+  .nav-overlay { display: block; }
+
+  header {
+    background: var(--navy) !important;
+    height: 64px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(7,24,45,0.18);
+  }
+  .logo { color: #fff; font-size: 16px; }
+  .book-btn { display: none; }
+  .login { display: none; }
+  .book-btn { padding: 10px 16px; font-size: 12px; background: var(--gold); border-radius: 8px; white-space: nowrap; }
+
+  header.menu-open .menu-toggle span { background: transparent; }
+  header.menu-open .menu-toggle span::before { top: 0; transform: rotate(45deg); }
+  header.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
+
+  nav {
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    width: 100%;
+    background: var(--navy-mid);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 20px 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+    transform: translateY(-101%);
+    visibility: hidden;
+    transition: transform 0.32s ease, visibility 0s linear 0.32s;
+    z-index: 180;
+  }
+  header.menu-open nav {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.32s ease, visibility 0s;
+  }
+  nav .nav-title { display: block; color: var(--gold); font-size: 10px; letter-spacing: 3px; font-weight: 700; padding: 12px 0 6px; }
+  nav a { color: #fff; font-size: 17px; font-weight: 600; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  nav a::after { content: none; }
+  nav .nav-book {
+    display: block;
+    margin-top: 14px;
+    text-align: center;
+    background: var(--gold);
+    border-bottom: 0;
+    border-radius: 8px;
+    padding: 14px 0;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  .header-right { position: relative; z-index: 200; }
+
+  .hero { min-height: 360px; padding: 80px 22px 60px; text-align: center; }
+  .hero-content { max-width: 100%; }
+  .hero h1 { font-size: 28px; margin-bottom: 12px; }
+  .hero p { font-size: 14px; max-width: 100%; margin: 0 auto 16px; }
+  .hero-buttons { justify-content: center; }
+  .hero-buttons a { font-size: 13px; padding: 11px 18px; border-radius: 8px; }
+  .locations { justify-content: center; flex-wrap: wrap; gap: 10px; }
+
+  .contact-area { padding: 44px 22px 48px; }
+  .panels { grid-template-columns: 1fr; gap: 18px; }
+  .panel { padding: 28px 22px; border-radius: 16px; }
+  .panel h2 { font-size: 22px; margin-bottom: 12px; }
+  .panel-intro { font-size: 13.5px; max-width: 100%; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  input, select, textarea { font-size: 16px; padding: 13px 14px; border-radius: 10px; }
+  textarea { height: 120px; }
+  .form-btn { font-size: 14px; padding: 14px; border-radius: 10px; }
+  .meeting-image { height: 160px; border-radius: 12px; }
+  .meeting-image a { font-size: 12px; padding: 12px 22px; border-radius: 8px; }
+  .benefits { grid-template-columns: 1fr; gap: 16px; }
+  .benefit-icon { font-size: 22px; }
+  .benefit h3 { font-size: 13px; }
+  .benefit p { font-size: 12px; }
+
+  .options { padding: 36px 22px; }
+  .options-grid { grid-template-columns: 1fr; gap: 0; }
+  .option { border: 0; border-radius: 14px; padding: 20px 18px; margin-bottom: 12px; background: #fff; box-shadow: 0 4px 18px rgba(7,24,45,0.06); }
+  .option-icon { font-size: 28px; }
+  .option h3 { font-size: 13px; }
+  .option p { font-size: 12px; }
+
+  .markets { padding: 44px 22px; }
+  .markets h2 { font-size: 22px; }
+  .market-labels { gap: 16px; font-size: 11px; }
+  .markets p { font-size: 12px; }
+
+  .opportunities { padding: 44px 22px 52px; }
+  .opportunities h2 { font-size: 22px; margin-bottom: 20px; }
+  .opportunity-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .opp-image { height: 95px; }
+  .opp h3 { font-size: 12px; }
+  .opp a { font-size: 11px; }
+
+  .cta { padding: 44px 22px; }
+  .cta h2 { font-size: 22px; }
+  .cta p { font-size: 13.5px; max-width: 100%; }
+  .cta-buttons { flex-direction: column; align-items: center; gap: 10px; }
+  .cta-buttons a { width: 100%; max-width: 290px; text-align: center; font-size: 13px; padding: 13px; border-radius: 8px; }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    text-align: center;
+    padding: 44px 22px 32px;
+  }
+  .footer-brand { grid-column: auto; }
+  .footer-col { align-items: center; }
+  .footer-tagline { max-width: 100%; }
+  .footer-title::after { left: 50%; transform: translateX(-50%); }
+  .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-contact { align-items: center; }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .opportunity-grid { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
 <body>
-<div class="page">
 
-<header>
-  <div class="logo">SPACERENTIYA</div>
-  <nav>
+<header id="main-header">
+  <div class="logo"><a href="../">SPACERENTIYA</a></div>
+  <nav id="main-nav">
+    <div class="nav-title">MENU</div>
     <a href="../#services">Services</a>
     <a href="../about/">About</a>
     <a href="../contact/">Contact</a>
+    <a class="nav-book" href="#schedule">Book Meeting</a>
   </nav>
   <div class="header-right">
     <a class="login" href="#">Investor Login</a>
     <a class="book-btn" href="#">Book Meeting</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
   </div>
 </header>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <section class="hero">
   <div class="hero-content">
     <div class="eyebrow">CONTACT SPACERENTIYA</div>
     <h1>Let's Find the<br>Right Opportunity.</h1>
-    <p>Whether you are looking for a premium workspace, property, industrial asset or investment opportunity, our team is here to understand your requirement.</p>
+    <p>Whether you are looking for a premium workspace, property, industrial asset or investment opportunity, our team is here to help.</p>
     <div class="hero-buttons">
-      <a href="#">Schedule a Meeting →</a>
-      <a href="#">Send an Enquiry</a>
+      <a href="#schedule">Schedule a Meeting →</a>
+      <a href="#enquiry">Send an Enquiry</a>
     </div>
     <div class="locations"><span>INDIA</span><span>DUBAI</span><span>SINGAPORE</span></div>
   </div>
@@ -272,28 +744,55 @@ footer{padding:8px 15px}
 
 <section class="contact-area">
   <div class="panels">
-
-    <div class="panel">
+    <div class="panel reveal-left" id="enquiry">
       <div class="eyebrow">START A CONVERSATION</div>
       <h2>Tell Us What You're<br>Looking For.</h2>
 
       <form>
         <div class="form-row">
-          <input type="text" placeholder="Full Name">
-          <input type="email" placeholder="Email Address">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" placeholder="Your full name" id="contact-name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" placeholder="your@email.com" id="contact-email">
+          </div>
         </div>
-        <input type="tel" placeholder="Phone Number">
-        <label style="font-size:12px;color:#777;display:block;margin-bottom:4px">I am interested in</label>
-        <select><option>Select an option</option><option>Property</option><option>Investment</option><option>Coworking</option></select>
-        <label style="font-size:12px;color:#777;display:block;margin-bottom:4px">Preferred Market</label>
-        <select><option>Select an option</option><option>India</option><option>Dubai</option><option>Singapore</option></select>
-        <label style="font-size:12px;color:#777;display:block;margin-bottom:4px">Your Requirement</label>
-        <textarea placeholder="Tell us more about your requirement..."></textarea>
-        <button class="form-btn" type="button">Send Enquiry →</button>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" placeholder="+91 or +971..." id="contact-phone">
+        </div>
+        <div class="form-group">
+          <label class="form-label">I am interested in</label>
+          <select id="contact-interest">
+            <option>Select an option</option>
+            <option>Property</option>
+            <option>Investment</option>
+            <option>Coworking</option>
+            <option>Industrial / Warehouse</option>
+            <option>Hotels &amp; Resorts</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Preferred Market</label>
+          <select id="contact-market">
+            <option>Select an option</option>
+            <option>India</option>
+            <option>Dubai</option>
+            <option>Singapore</option>
+            <option>All Markets</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Requirement</label>
+          <textarea placeholder="Tell us more about what you're looking for..." id="contact-message"></textarea>
+        </div>
+        <button class="form-btn" type="button" id="submit-enquiry">Send Enquiry →</button>
       </form>
     </div>
 
-    <div class="panel">
+    <div class="panel reveal-right" id="schedule">
       <div class="eyebrow">SCHEDULE A MEETING</div>
       <h2>Let's Meet &amp; Discuss<br>Your Opportunity.</h2>
       <p class="panel-intro">Book a conversation with the SpaceRentiya team to discuss your property requirement, investment opportunity, business requirement or potential collaboration.</p>
@@ -301,58 +800,175 @@ footer{padding:8px 15px}
       <div class="meeting-image"><a href="#">Schedule a Meeting →</a></div>
 
       <div class="benefits">
-        <div class="benefit"><div class="benefit-icon">▣</div><h3>Understand</h3><p>Discuss your requirements and ideas.</p></div>
-        <div class="benefit"><div class="benefit-icon">♧</div><h3>Advise</h3><p>Work with our real-estate advisory team.</p></div>
-        <div class="benefit"><div class="benefit-icon">▣</div><h3>Explore</h3><p>Discover your requirement and next steps.</p></div>
+        <div class="benefit">
+          <div class="benefit-icon">▣</div>
+          <h3>Understand</h3>
+          <p>Discuss your requirements and ideas.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">♧</div>
+          <h3>Advise</h3>
+          <p>Work with our real-estate advisory team.</p>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon">✓</div>
+          <h3>Explore</h3>
+          <p>Discover your requirement and next steps.</p>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <section class="options">
   <div class="options-grid">
-    <div class="option"><div class="option-icon">✉</div><h3>GENERAL ENQUIRIES</h3><p>Connect with the SpaceRentiya team.</p></div>
-    <div class="option"><div class="option-icon">▥</div><h3>PROPERTY OPPORTUNITIES</h3><p>Discuss a property or real-estate requirement.</p></div>
-    <div class="option"><div class="option-icon">♧</div><h3>INVESTMENT &amp; BUSINESS</h3><p>Explore investment opportunities and collaborations.</p></div>
+    <div class="option reveal delay-1">
+      <div class="option-icon">✉</div>
+      <h3>GENERAL ENQUIRIES</h3>
+      <p>Connect with the SpaceRentiya team for any general questions.</p>
+    </div>
+    <div class="option reveal delay-2">
+      <div class="option-icon">▥</div>
+      <h3>PROPERTY OPPORTUNITIES</h3>
+      <p>Discuss a property or real-estate requirement with our advisors.</p>
+    </div>
+    <div class="option reveal delay-3">
+      <div class="option-icon">♧</div>
+      <h3>INVESTMENT &amp; BUSINESS</h3>
+      <p>Explore investment opportunities and collaborations across markets.</p>
+    </div>
   </div>
 </section>
 
 <section class="markets">
-  <div class="eyebrow">OUR PRESENCE</div>
-  <h2>Three Markets. One Network.</h2>
-  <div class="map"></div>
-  <div class="market-labels"><span>INDIA</span><span>DUBAI</span><span>SINGAPORE</span></div>
-  <p>Connecting clients with real-estate opportunities across strategically important markets.</p>
+  <div class="eyebrow reveal">OUR PRESENCE</div>
+  <h2 class="reveal">Three Markets. One Network.</h2>
+  <div class="market-labels reveal"><span>INDIA</span><span>DUBAI</span><span>SINGAPORE</span></div>
+  <p class="reveal">Connecting clients with real-estate opportunities across strategically important markets.</p>
 </section>
 
 <section class="opportunities">
-  <div class="eyebrow" style="text-align:center">WHAT CAN WE HELP YOU WITH?</div>
-  <h2>What Are You Looking For?</h2>
+  <div class="eyebrow reveal">WHAT CAN WE HELP YOU WITH?</div>
+  <h2 class="reveal">What Are You Looking For?</h2>
   <div class="opportunity-grid">
-    <div class="opp"><div class="opp-image o1"></div><div class="opp-body"><h3>Luxury Coworking</h3><a href="#">Explore →</a></div></div>
-    <div class="opp"><div class="opp-image o2"></div><div class="opp-body"><h3>Industrial Land</h3><a href="#">Explore →</a></div></div>
-    <div class="opp"><div class="opp-image o3"></div><div class="opp-body"><h3>Warehouses</h3><a href="#">Explore →</a></div></div>
-    <div class="opp"><div class="opp-image o4"></div><div class="opp-body"><h3>Luxury Villas</h3><a href="#">Explore →</a></div></div>
-    <div class="opp"><div class="opp-image o5"></div><div class="opp-body"><h3>Hotels &amp; Resorts</h3><a href="#">Explore →</a></div></div>
-    <div class="opp"><div class="opp-image o6"></div><div class="opp-body"><h3>Commercial &amp; Investment</h3><a href="#">Explore →</a></div></div>
+    <div class="opp reveal delay-1"><div class="opp-image o1"></div><div class="opp-body"><h3>Luxury Coworking</h3><a href="#">Explore →</a></div></div>
+    <div class="opp reveal delay-2"><div class="opp-image o2"></div><div class="opp-body"><h3>Industrial Land</h3><a href="#">Explore →</a></div></div>
+    <div class="opp reveal delay-3"><div class="opp-image o3"></div><div class="opp-body"><h3>Warehouses</h3><a href="#">Explore →</a></div></div>
+    <div class="opp reveal delay-4"><div class="opp-image o4"></div><div class="opp-body"><h3>Luxury Villas</h3><a href="#">Explore →</a></div></div>
+    <div class="opp reveal delay-3"><div class="opp-image o5"></div><div class="opp-body"><h3>Hotels &amp; Resorts</h3><a href="#">Explore →</a></div></div>
+    <div class="opp reveal delay-4"><div class="opp-image o6"></div><div class="opp-body"><h3>Commercial &amp; Investment</h3><a href="#">Explore →</a></div></div>
   </div>
 </section>
 
 <section class="cta">
-  <div>
+  <div class="reveal">
     <h2>Your Next Opportunity Starts With a Conversation.</h2>
     <p>Share your requirement with SpaceRentiya or schedule a meeting with our team.</p>
-    <div class="cta-buttons"><a href="#">Schedule a Meeting →</a><a href="#">Send an Enquiry →</a></div>
+    <div class="cta-buttons">
+      <a href="#schedule">Schedule a Meeting →</a>
+      <a href="#enquiry">Send an Enquiry →</a>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div><div class="footer-logo">SPACERENTIYA</div><div>Luxury Real Estate · Investment · Advisory<br>India · Dubai · Singapore</div></div>
-  <div class="footer-links"><span>Home</span><span>About</span><span>Services</span><span>Blog</span><span>Contact</span></div>
-  <div>© 2026 SpaceRentiya. All rights reserved.</div>
+  <div class="footer-top">
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">SPACERENTIYA</div>
+      <p class="footer-tagline">Luxury real estate, investment &amp; advisory crafted for the world&rsquo;s most discerning investors.</p>
+      <div class="footer-locations"><span>India</span><span>Dubai</span><span>Singapore</span></div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Explore</div>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../about/">About</a>
+        <a href="../#services">Services</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Get in Touch</div>
+      <div class="footer-contact">
+        <a href="mailto:info.spacerentiya@gmail.com">info.spacerentiya@gmail.com</a>
+        <a href="tel:+919784626443">+91 97846 26443</a>
+        <a href="tel:+917690086335">+91 76900 86335</a>
+        <span>Jaipur, Rajasthan 302015</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 SpaceRentiya. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div>
+  </div>
 </footer>
 
-</div>
+<script>
+(function () {
+  var toggle = document.getElementById('menu-toggle');
+  var header = document.getElementById('main-header');
+  var overlay = document.getElementById('nav-overlay');
+
+  function openMenu() {
+    header.classList.add('menu-open');
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    header.classList.remove('menu-open');
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (toggle && header) {
+    toggle.addEventListener('click', function () {
+      header.classList.contains('menu-open') ? closeMenu() : openMenu();
+    });
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    document.getElementById('main-nav').querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* Scroll Reveal */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* Submit button feedback */
+  var submitBtn = document.getElementById('submit-enquiry');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function () {
+      var original = submitBtn.textContent;
+      submitBtn.textContent = 'Enquiry Sent ✓';
+      submitBtn.style.background = '#4a9268';
+      setTimeout(function () {
+        submitBtn.textContent = original;
+        submitBtn.style.background = '';
+      }, 3000);
+    });
+  }
+})();
+</script>
 </body>
 </html>
