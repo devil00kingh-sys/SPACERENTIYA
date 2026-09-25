@@ -1,0 +1,5 @@
+name = "spacerentiya"
+compatibility_date = "2026-09-25"
+
+[pages]
+build_output_dir = "."
