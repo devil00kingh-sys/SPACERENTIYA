@@ -636,135 +636,30 @@ nav .nav-book { display: none; }
 
 /* ===== FOOTER ===== */
 footer {
-  position: relative;
-  background: #060d18;
+  background: #0b1012;
   color: #bbb;
+  border-top: 1px solid rgba(184, 150, 92, 0.25);
   padding: 0;
-  overflow: hidden;
-}
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(184,150,92,0.65), transparent);
-  z-index: 1;
-}
-footer::after {
-  content: "";
-  position: absolute;
-  top: -160px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 460px;
-  background: radial-gradient(closest-side, rgba(184,150,92,0.14), transparent);
-  pointer-events: none;
-}
-
-/* -- CTA band -- */
-.footer-cta {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  transform: translateY(-50%);
-  padding: 0 var(--gutter);
-}
-.footer-cta-in {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  background: linear-gradient(120deg, #1b1610, #2e2518);
-  border: 1px solid rgba(184,150,92,0.45);
-  border-radius: 18px;
-  padding: 30px 36px;
-  box-shadow: 0 26px 60px rgba(0,0,0,0.45);
-}
-.footer-cta-in::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(500px 220px at 100% 0%, rgba(184,150,92,0.22), transparent 60%),
-    radial-gradient(460px 240px at 0% 100%, rgba(184,150,92,0.14), transparent 60%);
-  pointer-events: none;
-}
-.footer-cta-copy, .footer-cta-actions { position: relative; }
-.footer-cta h3 {
-  font: 400 clamp(18px, 2.4vw, 24px)/1.25 Georgia, "Times New Roman", serif;
-  color: #fff;
-  margin-bottom: 6px;
-}
-.footer-cta p {
-  font-size: 13px;
-  line-height: 1.6;
-  color: #bdb6a8;
-}
-.footer-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.footer-cta-actions a {
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  padding: 13px 24px;
-  border-radius: 8px;
-  transition: all var(--transition);
-}
-.fta-primary { background: var(--gold); color: #fff; }
-.fta-primary:hover {
-  background: var(--gold-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(184,150,92,0.4);
-}
-.fta-secondary { border: 1px solid rgba(184,150,92,0.5); color: #e8dcc3; }
-.fta-secondary:hover {
-  background: rgba(184,150,92,0.16);
-  border-color: var(--gold);
-  transform: translateY(-2px);
-}
-
-/* -- Main footer -- */
-.footer-main {
-  position: relative;
-  background:
-    radial-gradient(120% 90% at 50% -12%, rgba(184,150,92,0.10), transparent 55%),
-    #060d18;
-  padding-top: 96px;
 }
 .footer-top {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 58px var(--gutter) 48px;
+  padding: 58px var(--gutter) 44px;
   display: grid;
-  grid-template-columns: 1.5fr 0.9fr 1.1fr 1.1fr;
-  gap: 44px;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
 }
 .footer-col { display: flex; flex-direction: column; gap: 14px; }
 .footer-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
   font-family: Georgia, serif;
   color: #fff;
   font-size: 22px;
   letter-spacing: 3px;
 }
-.footer-logo::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  transform: rotate(45deg);
-  border-radius: 2px;
-  background: var(--gold);
-}
 .footer-tagline {
   font-size: 13px;
   line-height: 1.7;
-  color: #9d998f;
+  color: #999;
   max-width: 300px;
 }
 .footer-locations {
@@ -774,7 +669,7 @@ footer::after {
   margin-top: 6px;
 }
 .footer-locations span {
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--gold);
@@ -782,28 +677,7 @@ footer::after {
   border: 1px solid rgba(184, 150, 92, 0.35);
   border-radius: 20px;
   padding: 6px 14px;
-  transition: background var(--transition), color var(--transition);
 }
-.footer-locations span:hover { background: rgba(184,150,92,0.12); color: #e8d5ac; }
-.footer-social { display: flex; gap: 10px; margin-top: 4px; }
-.footer-social a {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(184,150,92,0.35);
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #cfc7b6;
-  transition: all var(--transition);
-}
-.footer-social a:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(184,150,92,0.35);
-}
-.footer-social svg { width: 15px; height: 15px; fill: currentColor; }
 .footer-title {
   font-family: Georgia, serif;
   color: #fff;
@@ -826,147 +700,37 @@ footer::after {
 .footer-contact { display: flex; flex-direction: column; gap: 13px; }
 .footer-links a,
 .footer-contact a {
-  color: #bfbcb4;
+  color: #bbb;
   font-size: 13px;
   text-decoration: none;
   transition: color var(--transition), transform var(--transition);
 }
-.footer-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.footer-links a::before {
-  content: "→";
-  color: var(--gold);
-  font-size: 11px;
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.footer-links a:hover::before { opacity: 1; transform: translateX(0); }
 .footer-links a:hover,
 .footer-contact a:hover { color: var(--gold); transform: translateX(4px); }
-.footer-contact a {
-  position: relative;
-  padding-left: 18px;
-}
-.footer-contact a::before {
-  content: "";
-  position: absolute;
-  left: 2px;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  transform: rotate(45deg);
-  background: var(--gold);
-  opacity: 0.6;
-}
 .footer-contact span {
   font-size: 13px;
   line-height: 1.7;
-  color: #9d998f;
+  color: #999;
   overflow-wrap: anywhere;
 }
-.footer-news-intro {
-  font-size: 12.5px;
-  line-height: 1.65;
-  color: #9d998f;
-  margin-bottom: 2px;
-}
-.footer-form {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(184,150,92,0.35);
-  border-radius: 50px;
-  padding: 5px 5px 5px 16px;
-  margin-top: 8px;
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-.footer-form:focus-within {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(184,150,92,0.16);
-}
-.footer-form input {
-  flex: 1;
-  min-width: 0;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  color: #fff;
-  font-size: 12.5px;
-  font-family: inherit;
-}
-.footer-form input::placeholder { color: #7c786d; }
-.footer-form button {
-  width: 38px; height: 38px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gold);
-  color: #fff;
-  border: 0;
-  border-radius: 50%;
-  font-size: 17px;
-  line-height: 1;
-  cursor: pointer;
-  transition: background var(--transition), transform 0.2s ease;
-}
-.footer-form button:hover { background: var(--gold-dark); transform: scale(1.08); }
-.footer-form-hint { font-size: 11px; color: #716d63; margin-top: 10px; }
 .footer-bottom {
-  position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 22px var(--gutter);
-  max-width: 1200px;
-  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   font-size: 12px;
-  color: #8b877c;
+  color: #888;
 }
-.footer-bottom-links { display: flex; align-items: center; gap: 22px; }
+.footer-bottom-links { display: flex; gap: 22px; }
 .footer-bottom-links a {
-  color: #8b877c;
+  color: #888;
   text-decoration: none;
-  position: relative;
-  padding-bottom: 2px;
   transition: color var(--transition);
 }
-.footer-bottom-links a::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 0; height: 1px;
-  background: var(--gold);
-  transition: width 0.25s ease;
-}
 .footer-bottom-links a:hover { color: var(--gold); }
-.footer-bottom-links a:hover::after { width: 100%; }
-.back-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--gold) !important;
-  font-weight: 600;
-}
-.back-top span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px; height: 24px;
-  border: 1px solid rgba(184,150,92,0.5);
-  border-radius: 50%;
-  font-size: 11px;
-  transition: background var(--transition), transform var(--transition);
-}
-.back-top:hover span { background: var(--gold); color: #fff; transform: translateY(-2px); }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
@@ -980,9 +744,6 @@ footer::after {
   .footer-top { grid-template-columns: repeat(2, 1fr); gap: 34px; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-tagline { max-width: 380px; }
-  .footer-news { grid-column: 1 / -1; }
-  .footer-form { max-width: 360px; }
-  .footer-cta-in { padding: 26px 24px; }
 }
 
 @media (max-width: 640px) {
@@ -1085,10 +846,6 @@ footer::after {
   .buttons { flex-direction: column; align-items: center; gap: 10px; }
   .buttons a { width: 100%; max-width: 280px; text-align: center; }
 
-  .footer-cta { transform: translateY(-38%); padding: 0 22px; }
-  .footer-cta-in { flex-direction: column; text-align: center; padding: 28px 22px; }
-  .footer-cta-actions { justify-content: center; }
-  .footer-main { padding-top: 78px; }
   .footer-top {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -1096,9 +853,7 @@ footer::after {
     padding: 44px 22px 32px;
   }
   .footer-brand { grid-column: auto; }
-  .footer-news { grid-column: auto; }
   .footer-col { align-items: center; }
-  .footer-logo { justify-content: center; }
   .footer-tagline { max-width: 100%; }
   .footer-title::after { left: 50%; transform: translateX(-50%); }
   .footer-links {
@@ -1107,22 +862,12 @@ footer::after {
     justify-content: center;
     gap: 20px;
   }
-  .footer-links a::before { display: none; }
-  .footer-social { justify-content: center; }
-  .footer-locations {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-  }
-  .footer-locations span { white-space: nowrap; }
   .footer-contact { align-items: center; }
-  .footer-form { width: 100%; max-width: 320px; }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
     padding: 20px;
   }
-  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
 }
 @media (max-width: 400px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
@@ -1314,71 +1059,34 @@ footer::after {
   </div>
 </section>
 <footer>
-  <div class="footer-cta">
-    <div class="footer-cta-in">
-      <div class="footer-cta-copy">
-        <h3>Ready to find the right property?</h3>
-        <p>Book a private consultation with our advisors across India, Dubai &amp; Singapore.</p>
+  <div class="footer-top">
+    <div class="footer-col footer-brand">
+      <div class="footer-logo">SPACERENTIYA</div>
+      <p class="footer-tagline">Luxury real estate, investment &amp; advisory crafted for the world&rsquo;s most discerning investors.</p>
+      <div class="footer-locations"><span>India</span><span>Dubai</span><span>Singapore</span></div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Explore</div>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../about/">About</a>
+        <a href="../#services">Services</a>
+        <a href="../contact/">Contact</a>
       </div>
-      <div class="footer-cta-actions">
-        <a class="fta-primary" href="../contact/">Book a Meeting</a>
-        <a class="fta-secondary" href="mailto:info.spacerentiya@gmail.com">Email Us</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Get in Touch</div>
+      <div class="footer-contact">
+        <a href="mailto:info.spacerentiya@gmail.com">info.spacerentiya@gmail.com</a>
+        <a href="tel:+919784626443">+91 97846 26443</a>
+        <a href="tel:+917690086335">+91 76900 86335</a>
+        <span>Jaipur, Rajasthan 302015</span>
       </div>
     </div>
   </div>
-
-  <div class="footer-main">
-    <div class="footer-top">
-      <div class="footer-col footer-brand">
-        <div class="footer-logo">SPACERENTIYA</div>
-        <p class="footer-tagline">Luxury real estate, investment &amp; advisory crafted for the world&rsquo;s most discerning investors.</p>
-        <div class="footer-locations"><span>India</span><span>Dubai</span><span>Singapore</span></div>
-        <div class="footer-social">
-          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.2 1.3-1.9 1.4-.5.2-1.1.2-1.9-.1-.5-.2-1.1-.5-1.9-1-1.5-1-3-2.6-3.9-4.5-.5-.9-.8-1.7-.8-2.4 0-.7.5-1.3.9-1.6.2-.2.5-.3.7-.3h.5c.2 0 .4-.1.6.5l.9 2.1c.1.1.1.3 0 .4l-.4.6-.5.6c-.1.1-.3.2-.1.5.2.3.8 1.4 1.8 2.3 1.2 1.1 2.2 1.4 2.6 1.6.3.1.4.1.5 0l.8-1c.1-.2.3-.1.5-.1l2.1 1c.3.2.5.3.6.3.1.2.1.6-.1.8z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 1.8.24 2.2.4.6.23 1 .5 1.4 1 .5.4.8.9 1 1.4.16.4.34 1 .4 2.2.07 1.3.07 1.6.07 4.8s0 3.5-.07 4.8c-.06 1.2-.24 1.8-.4 2.2a3.8 3.8 0 0 1-1 1.4c-.4.4-.9.8-1.4 1-.4.16-1 .34-2.2.4-1.3.07-1.6.07-4.8.07s-3.5 0-4.8-.07c-1.2-.06-1.8-.24-2.2-.4a3.8 3.8 0 0 1-1.4-1 3.8 3.8 0 0 1-1-1.4c-.16-.4-.34-1-.4-2.2C2.2 15.5 2.2 15.2 2.2 12s0-3.5.07-4.8c.06-1.2.24-1.8.4-2.2.23-.6.5-1 1-1.4.4-.4.9-.8 1.4-1 .4-.16 1-.34 2.2-.4C8.5 2.2 8.8 2.2 12 2.2zm0 2.2c-3.1 0-3.5 0-4.7.07-1.1.05-1.5.19-1.7.32-.4.16-.6.32-.9.6-.3.3-.5.5-.6.9-.13.2-.27.6-.32 1.7C3.7 8.5 3.7 8.9 3.7 12s0 3.5.07 4.7c.05 1.1.19 1.5.32 1.7.16.4.32.6.6.9.3.3.5.5.9.6.2.13.6.27 1.7.32 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c1.1-.05 1.5-.19 1.7-.32.4-.16.6-.32.9-.6.3-.3.5-.5.6-.9.13-.2.27-.6.32-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.05-1.1-.19-1.5-.32-1.7a2.4 2.4 0 0 0-.6-.9 2.4 2.4 0 0 0-.9-.6c-.2-.13-.6-.27-1.7-.32C15.5 4.4 15.1 4.4 12 4.4zm0 3.4a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4zm0 2.2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm4.3-2.3a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.4v1.5c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3zM4.9 7.4a2 2 0 1 1 2-2 2 2 0 0 1-2 2zM6.6 20.4H3.3V9h3.3z"/></svg></a>
-          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.3 2H21l-6.4 7.3L22 22h-6.9l-4.6-6-5.6 6H3.4l6.9-7.9L2 2h7.1l4.1 5.4L18.3 2zm-1 18h1.8L7.1 3.9H5.2L17.3 20z"/></svg></a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <div class="footer-title">Explore</div>
-        <div class="footer-links">
-          <a href="../">Home</a>
-          <a href="../about/">About</a>
-          <a href="../#services">Services</a>
-          <a href="../contact/">Contact</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <div class="footer-title">Get in Touch</div>
-        <div class="footer-contact">
-          <a href="mailto:info.spacerentiya@gmail.com">info.spacerentiya@gmail.com</a>
-          <a href="tel:+919784626443">+91 97846 26443</a>
-          <a href="tel:+917690086335">+91 76900 86335</a>
-          <span>Jaipur, Rajasthan 302015</span>
-        </div>
-      </div>
-
-      <div class="footer-col footer-news">
-        <div class="footer-title">Stay Updated</div>
-        <p class="footer-news-intro">Markets shift fast. Get the latest listings &amp; insights in your inbox.</p>
-        <form class="footer-form" onsubmit="return false;">
-          <input type="email" placeholder="Your email address" aria-label="Email address">
-          <button type="submit" aria-label="Subscribe">&rarr;</button>
-        </form>
-        <p class="footer-form-hint">No spam. Unsubscribe anytime.</p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div>&copy; 2026 SpaceRentiya. All rights reserved.</div>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a>
-        <a href="#" class="back-top">Back to top <span>&#8593;</span></a>
-      </div>
-    </div>
+  <div class="footer-bottom">
+    <div>&copy; 2026 SpaceRentiya. All rights reserved.</div>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div>
   </div>
 </footer>
 
